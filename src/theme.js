@@ -2,11 +2,11 @@ export const themeOptions = {
   palette: {
     type: "light",
     primary: {
-      main: "#103d9a",
+      main: "#7CB342",
       contrastText: "#e7e8ef",
     },
     secondary: {
-      main: "#d40082",
+      main: "#ff5100",
     },
     error: {
       main: "#e02118",
