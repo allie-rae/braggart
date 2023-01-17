@@ -10,7 +10,11 @@ function App() {
       <Navigation />
       <Typography
         variant="h1"
-        sx={{ color: theme.palette.secondary.main, textAlign: "center" }}
+        sx={{
+          color: theme.palette.secondary.main,
+          textAlign: "center",
+          fontWeight: "500",
+        }}
       >
         Hi mom!!
       </Typography>

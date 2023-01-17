@@ -23,4 +23,16 @@ export const themeOptions = {
       main: "#0a9205",
     },
   },
+  typography: {
+    fontFamily: [
+      "Open sans",
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+  },
 };
