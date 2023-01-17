@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "parser": "",
+  "plugins": ["simple-import-sort"],
+  "extends": [
+    "react-app",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": { "es6": true },
+  "rules": {
+    "react/prop-types": "off",
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
+    "react/jsx-uses-vars": "warn",
+    "func-style": "off",
+    "no-unused-vars": ["off", { "args": "none" }],
+    "react/react-in-jsx-scope": "off",
+    "no-extra-boolean-cast": 0
+  }
+}
