@@ -14,7 +14,7 @@ function App() {
       timestamp: 1674113916784,
     },
     {
-      headline: "Mentored that one dude who needed help",
+      headline: "Mentored that one dude",
       body: "What's his face messaged me about that thing. It was an important enough thing that I stopped to help. Sir bruh eventually figured out what was going wrong. Go bruh go!",
       timestamp: 1674113916784,
     },
