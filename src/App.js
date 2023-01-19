@@ -1,20 +1,31 @@
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import { Button, TextField } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { useState } from "react";
 
+import { BragForm } from "./BragForm";
+import { BragList } from "./BragList";
 import { Navigation } from "./Navigation";
 
 function App() {
-  const theme = useTheme();
-  const [listOfAccomplishments, setListOfAccomplishments] = useState([]);
-  const [newAccomplishment, setNewAccomplishment] = useState("");
-  console.log("newAccomplishment", newAccomplishment);
-  console.log("listOfAccomplishments", listOfAccomplishments);
-
+  const [listOfAccomplishments, setListOfAccomplishments] = useState([
+    {
+      title: "Met with Geoff the designer",
+      body: `I said, "Can I pretty please change the Portal and make it prettier?" He patted my head and said, "Maybe someday..."`,
+      timestamp: 1674113916784,
+    },
+    {
+      title: "Mentored that one dude who needed help",
+      body: "What's his face messaged me about that thing. It was an important enough thing that I stopped to help. Sir bruh eventually figured out what was going wrong. Go bruh go!",
+      timestamp: 1674113916784,
+    },
+    {
+      title: "Said hi to Walrus",
+      body: "Walrus said sour beer is acidic. I don't know for sure, but maybe I'll head over to that specialty craft place on Friday.",
+      timestamp: 1674113916784,
+    },
+  ]);
+  console.log("Date.now()", Date.now());
   return (
-    <div>
+    <Box sx={{ marginBottom: "4rem" }}>
       <Navigation />
       <Box
         sx={{
@@ -22,41 +33,16 @@ function App() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 2,
+          marginTop: 4,
         }}
       >
-        <TextField
-          variant="outlined"
-          placeholder="Type accomplishment here..."
-          value={newAccomplishment}
-          sx={{ minWidth: "275px" }}
-          onChange={(e) => {
-            setNewAccomplishment(e.target.value);
-          }}
+        <BragForm
+          listOfAccomplishments={listOfAccomplishments}
+          setListOfAccomplishments={setListOfAccomplishments}
         />
-        <Button
-          color="secondary"
-          size="large"
-          startIcon={<AddCircleOutlineIcon />}
-          onClick={() => {
-            if (newAccomplishment.trim().length) {
-              setListOfAccomplishments([
-                ...listOfAccomplishments,
-                newAccomplishment,
-              ]);
-              setNewAccomplishment("");
-            }
-          }}
-        >
-          Brag
-        </Button>
-        <ul>
-          {listOfAccomplishments.map((text, i) => (
-            <li key={`${i}-${text}`}>{text}</li>
-          ))}{" "}
-        </ul>
+        <BragList listOfAccomplishments={listOfAccomplishments} />
       </Box>
-    </div>
+    </Box>
   );
 }
 

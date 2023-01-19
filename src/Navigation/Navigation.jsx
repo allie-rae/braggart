@@ -30,7 +30,7 @@ export const Navigation = () => {
           </Typography>
           {!isUserLoggedIn && <Button color="inherit">Login</Button>}
           {isUserLoggedIn && (
-            <>
+            <Box>
               <IconButton
                 color="inherit"
                 size="large"
@@ -48,7 +48,7 @@ export const Navigation = () => {
               >
                 <AccountBoxIcon />
               </IconButton>
-            </>
+            </Box>
           )}
         </Toolbar>
       </AppBar>
