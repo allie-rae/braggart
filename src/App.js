@@ -8,17 +8,17 @@ import { Navigation } from "./Navigation";
 function App() {
   const [listOfAccomplishments, setListOfAccomplishments] = useState([
     {
-      title: "Met with Geoff the designer",
+      headline: "Met with Geoff the designer",
       body: `I said, "Can I pretty please change the Portal and make it prettier?" He patted my head and said, "Maybe someday..."`,
       timestamp: 1674113916784,
     },
     {
-      title: "Mentored that one dude who needed help",
+      headline: "Mentored that one dude who needed help",
       body: "What's his face messaged me about that thing. It was an important enough thing that I stopped to help. Sir bruh eventually figured out what was going wrong. Go bruh go!",
       timestamp: 1674113916784,
     },
     {
-      title: "Said hi to Walrus",
+      headline: "Said hi to Walrus",
       body: "Walrus said sour beer is acidic. I don't know for sure, but maybe I'll head over to that specialty craft place on Friday.",
       timestamp: 1674113916784,
     },

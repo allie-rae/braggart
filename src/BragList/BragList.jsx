@@ -46,7 +46,7 @@ export const BragList = ({ listOfAccomplishments }) => {
                       }}
                     />
                     <Typography variant="h6" sx={{ fontSize: "1rem" }}>
-                      {accomplishment.title}
+                      {accomplishment.headline}
                     </Typography>
                   </Box>
                   <Typography variant="body2" sx={{ marginLeft: "23px" }}>
