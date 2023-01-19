@@ -1,3 +1,4 @@
+import { Fade } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
 
@@ -23,9 +24,8 @@ function App() {
       timestamp: 1674113916784,
     },
   ]);
-  console.log("Date.now()", Date.now());
   return (
-    <Box sx={{ marginBottom: "4rem" }}>
+    <Box sx={{ marginBottom: 3 }}>
       <Navigation />
       <Box
         sx={{
@@ -33,7 +33,7 @@ function App() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 4,
+          marginTop: 3,
         }}
       >
         <BragForm
