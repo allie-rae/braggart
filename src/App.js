@@ -10,19 +10,19 @@ function App() {
     {
       headline: "Met with Geoff the designer",
       body: `I said, "Can I pretty please change the Portal and make it prettier?" He patted my head and said, "Maybe someday..."`,
-      timestamp: 1674113916784,
+      timestamp: 1674190188554,
       id: 3,
     },
     {
       headline: "Mentored that one dude",
       body: "What's his face messaged me about that thing. It was an important enough thing that I stopped to help. Sir bruh eventually figured out what was going wrong. Go bruh go!",
-      timestamp: 1674113916784,
+      timestamp: 1674066764000,
       id: 2,
     },
     {
       headline: "Said hi to Walrus",
       body: "Walrus said sour beer is acidic. I don't know for sure, but maybe I'll head over to that specialty craft place on Friday.",
-      timestamp: 1674113916784,
+      timestamp: 1673977064000,
       id: 1,
     },
   ]);

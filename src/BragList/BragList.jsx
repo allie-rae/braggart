@@ -46,7 +46,7 @@ export const BragList = ({
               <Typography variant="overline">
                 {format(
                   new Date(accomplishment.timestamp),
-                  "E MMM dd @ h:mm b"
+                  "E MMM dd @ h:mm a"
                 )}
               </Typography>
               <Box
