@@ -10,6 +10,7 @@ export const InteractiveEditIcon = ({
   return (
     <DriveFileRenameOutlineIcon
       sx={{
+        cursor: "pointer",
         fontSize: "1.1rem",
         color: isEditTriggered
           ? theme.palette.primary.main

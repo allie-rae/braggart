@@ -1,9 +1,9 @@
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Box, Stack, TextField, Typography, useTheme } from "@mui/material";
 import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
 
+import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
 import { InteractiveEditIcon } from "../InteractiveEditIcon";
 
 export const BragList = ({
@@ -107,28 +107,19 @@ export const BragList = ({
                       turnOffEdit={() => setIsUserEditing(null)}
                       isEditTriggered={isUserEditing === accomplishment.id}
                     />
-                    <DeleteOutlineIcon
-                      sx={{
-                        fontSize: "1.1rem",
-                        color:
-                          isUserConfirmingDelete === accomplishment.id
-                            ? theme.palette.error.main
-                            : theme.palette.grey[400],
-                        "&:hover": {
-                          color:
-                            isUserConfirmingDelete === accomplishment.id
-                              ? theme.palette.error.main
-                              : theme.palette.grey[900],
-                        },
-                      }}
-                      onClick={() =>
+                    <InteractiveDeleteIcon
+                      onConfirm={() =>
+                        setIsUserConfirmingDelete(accomplishment.id)
+                      }
+                      onDelete={() =>
+                        setListOfAccomplishments(
+                          listOfAccomplishments.filter(
+                            (accomp) => accomp.id !== accomplishment.id
+                          )
+                        )
+                      }
+                      isUserConfirmingDelete={
                         isUserConfirmingDelete === accomplishment.id
-                          ? setListOfAccomplishments(
-                              listOfAccomplishments.filter(
-                                (accomp) => accomp.id !== accomplishment.id
-                              )
-                            )
-                          : setIsUserConfirmingDelete(accomplishment.id)
                       }
                     />
                   </Box>
