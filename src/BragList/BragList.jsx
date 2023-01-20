@@ -95,6 +95,9 @@ export const BragList = ({
                           });
                           setListOfAccomplishments(copyOfAccomplishments);
                         }}
+                        onKeyDown={(e) =>
+                          e.key === "Enter" && setIsUserEditing(false)
+                        }
                       />
                     )}
                   </Box>
@@ -151,6 +154,9 @@ export const BragList = ({
                       });
                       setListOfAccomplishments(copyOfAccomplishments);
                     }}
+                    onKeyDown={(e) =>
+                      e.key === "Enter" && setIsUserEditing(false)
+                    }
                   />
                 )}
               </Box>
