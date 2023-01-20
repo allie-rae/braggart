@@ -16,10 +16,10 @@
     "react/prop-types": "off",
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "warn",
-    "react/jsx-uses-vars": "warn",
+    "react/jsx-uses-vars": "off",
     "func-style": "off",
-    "no-unused-vars": ["off", { "args": "none" }],
     "react/react-in-jsx-scope": "off",
-    "no-extra-boolean-cast": 0
+    "no-extra-boolean-cast": 0,
+    "no-unused-vars": "off"
   }
 }
