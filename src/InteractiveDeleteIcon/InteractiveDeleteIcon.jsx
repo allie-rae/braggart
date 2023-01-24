@@ -14,11 +14,11 @@ export const InteractiveDeleteIcon = ({
           cursor: "pointer",
           fontSize: "1.1rem",
           color: isUserConfirmingDelete
-            ? theme.palette.error.main
+            ? theme.palette.secondary.main
             : theme.palette.grey[400],
           "&:hover": {
             color: isUserConfirmingDelete
-              ? theme.palette.error.main
+              ? theme.palette.secondary.main
               : theme.palette.grey[900],
           },
         }}
@@ -29,7 +29,7 @@ export const InteractiveDeleteIcon = ({
           variant="body2"
           sx={{
             fontWeight: 800,
-            color: theme.palette.error.main,
+            color: theme.palette.secondary.main,
             cursor: "pointer",
           }}
           onClick={() => onDelete()}
@@ -40,30 +40,3 @@ export const InteractiveDeleteIcon = ({
     </>
   );
 };
-
-// import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
-// import { useTheme } from "@mui/material";
-
-// export const InteractiveEditIcon = ({
-//   isEditTriggered,
-//   turnOnEdit,
-//   turnOffEdit,
-// }) => {
-//   const theme = useTheme();
-//   return (
-//     <DriveFileRenameOutlineIcon
-//       sx={{
-//         fontSize: "1.1rem",
-//         color: isEditTriggered
-//           ? theme.palette.primary.main
-//           : theme.palette.grey[400],
-//         "&:hover": {
-//           color: isEditTriggered
-//             ? theme.palette.primary.main
-//             : theme.palette.grey[900],
-//         },
-//       }}
-//       onClick={() => (isEditTriggered ? turnOffEdit() : turnOnEdit())}
-//     />
-//   );
-// };

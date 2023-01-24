@@ -3,16 +3,32 @@ import "./index.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
+import { Account, BragTimeline, Goals, PageNotFound } from "./Pages";
 import reportWebVitals from "./reportWebVitals";
 import { themeOptions } from "./theme";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <PageNotFound />,
+    children: [
+      { path: "/timeline", element: <BragTimeline /> },
+      { path: "/account", element: <Account /> },
+      { path: "/goals", element: <Goals /> },
+      { path: "/404", element: <PageNotFound /> },
+    ],
+  },
+]);
 
 const customTheme = createTheme(themeOptions);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ThemeProvider theme={customTheme}>
-    <App />
+    <RouterProvider router={router} />
   </ThemeProvider>
 );
 
