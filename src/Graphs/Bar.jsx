@@ -1,3 +1,5 @@
+import { Fade } from "@mui/material";
+import { Box } from "@mui/system";
 import { useMemo } from "react";
 import { Chart } from "react-charts";
 
@@ -43,12 +45,14 @@ export const Bar = () => {
     []
   );
   return (
-    <Chart
-      options={{
-        data,
-        primaryAxis,
-        secondaryAxes,
-      }}
-    />
+    <Box sx={{ height: "300px", width: "300px", marginBottom: 2 }}>
+      <Chart
+        options={{
+          data,
+          primaryAxis,
+          secondaryAxes,
+        }}
+      />
+    </Box>
   );
 };

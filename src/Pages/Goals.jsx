@@ -18,15 +18,11 @@ export const Goals = () => {
         <Typography variant="h6" sx={{ fontSize: "1rem" }}>
           Pages Read
         </Typography>
-        <Box sx={{ height: "300px", width: "300px", marginBottom: 2 }}>
-          <Line />
-        </Box>
+        <Line />
         <Typography variant="h6" sx={{ fontSize: "1rem" }}>
           Meetings Attended
         </Typography>
-        <Box sx={{ height: "300px", width: "300px" }}>
-          <Bar />
-        </Box>
+        <Bar />
       </Box>
     </Box>
   );

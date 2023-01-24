@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { useMemo } from "react";
 import { Chart } from "react-charts";
 
@@ -61,12 +62,14 @@ export const Line = () => {
     []
   );
   return (
-    <Chart
-      options={{
-        data,
-        primaryAxis,
-        secondaryAxes,
-      }}
-    />
+    <Box sx={{ height: "300px", width: "300px", marginBottom: 2 }}>
+      <Chart
+        options={{
+          data,
+          primaryAxis,
+          secondaryAxes,
+        }}
+      />
+    </Box>
   );
 };
