@@ -13,7 +13,9 @@ export const Account = () => {
           marginTop: 3,
         }}
       >
-        <Typography variant="h6">Account</Typography>
+        <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+          Account
+        </Typography>
       </Box>
     </Box>
   );

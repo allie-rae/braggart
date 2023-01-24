@@ -13,7 +13,7 @@ export const BragTimeline = () => {
       id: 3,
     },
     {
-      headline: "Met with design to clarify objectives / timelines",
+      headline: "Met with design to clarify objectives",
       body: "We exchanged ideas, including potential improvements to the portal, what's next priority-wise, who the work could be given to, and next steps.",
       timestamp: 1674066764000,
       id: 2,
