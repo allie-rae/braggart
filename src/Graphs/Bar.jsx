@@ -11,19 +11,19 @@ const data = [
     data: [
       {
         type: "Design",
-        number: 20,
+        number: 15,
       },
       {
         type: "Mentorship",
-        number: 34,
+        number: 20,
       },
       {
-        type: "Product Management",
-        number: 10,
+        type: "Product",
+        number: 9,
       },
       {
         type: "Engineering",
-        number: 45,
+        number: 35,
       },
     ],
   },

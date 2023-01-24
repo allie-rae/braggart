@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
+import { headerFontSize } from "../constants";
 import { Bar, Line } from "../Graphs";
 
 export const Goals = () => {
@@ -15,11 +16,11 @@ export const Goals = () => {
           marginTop: 3,
         }}
       >
-        <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+        <Typography variant="h6" sx={{ fontSize: headerFontSize }}>
           Pages Read
         </Typography>
         <Line />
-        <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+        <Typography variant="h6" sx={{ fontSize: headerFontSize }}>
           Meetings Attended
         </Typography>
         <Bar />
