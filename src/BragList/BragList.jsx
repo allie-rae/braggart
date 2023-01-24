@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 
 import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
 import { InteractiveEditIcon } from "../InteractiveEditIcon";
+import { formatTimestampDayMonthHourMinute } from "../utils/formatTimestamp";
 
 export const BragList = ({
   listOfAccomplishments,
@@ -44,10 +45,7 @@ export const BragList = ({
               }}
             >
               <Typography variant="overline">
-                {format(
-                  new Date(accomplishment.timestamp),
-                  "E MMM dd @ h:mm a"
-                )}
+                {formatTimestampDayMonthHourMinute(accomplishment.timestamp)}
               </Typography>
               <Box
                 sx={{
