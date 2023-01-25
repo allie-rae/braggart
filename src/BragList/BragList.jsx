@@ -41,12 +41,15 @@ export const BragList = ({
         marginRight: 3,
       }}
     >
-      <Fade in timeout={transitionTime}>
-        <Stack spacing={3}>
-          {listOfAccomplishments.map((accomplishment, i) => {
-            return (
+      <Stack spacing={3}>
+        {listOfAccomplishments.map((accomplishment, i) => {
+          return (
+            <Fade
+              in
+              timeout={transitionTime}
+              key={`${i}-${accomplishment.title}`}
+            >
               <Box
-                key={`${i}-${accomplishment.title}`}
                 sx={{
                   display: "flex",
                   flexDirection: "column",
@@ -86,26 +89,28 @@ export const BragList = ({
                         </>
                       )}
                       {isUserEditing === accomplishment.id && (
-                        <TextField
-                          label="Headline"
-                          variant="outlined"
-                          placeholder={"Type your headline here..."}
-                          value={accomplishment.headline}
-                          sx={{ minWidth: "275px", mb: 1 }}
-                          onChange={(e) => {
-                            const copyOfAccomplishments = [
-                              ...listOfAccomplishments,
-                            ];
-                            copyOfAccomplishments.splice(i, 1, {
-                              ...accomplishment,
-                              headline: e.target.value,
-                            });
-                            setListOfAccomplishments(copyOfAccomplishments);
-                          }}
-                          onKeyDown={(e) =>
-                            e.key === "Enter" && setIsUserEditing(false)
-                          }
-                        />
+                        <Fade in timeout={transitionTime}>
+                          <TextField
+                            label="Headline"
+                            variant="outlined"
+                            placeholder={"Type your headline here..."}
+                            value={accomplishment.headline}
+                            sx={{ minWidth: "275px", mb: 1 }}
+                            onChange={(e) => {
+                              const copyOfAccomplishments = [
+                                ...listOfAccomplishments,
+                              ];
+                              copyOfAccomplishments.splice(i, 1, {
+                                ...accomplishment,
+                                headline: e.target.value,
+                              });
+                              setListOfAccomplishments(copyOfAccomplishments);
+                            }}
+                            onKeyDown={(e) =>
+                              e.key === "Enter" && setIsUserEditing(false)
+                            }
+                          />
+                        </Fade>
                       )}
                     </Box>
                     <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -137,34 +142,36 @@ export const BragList = ({
                     </Typography>
                   )}
                   {isUserEditing === accomplishment.id && (
-                    <TextField
-                      variant="outlined"
-                      label="Brag"
-                      placeholder={"Write about your accomplishment here..."}
-                      value={accomplishment.body}
-                      multiline
-                      sx={{ minWidth: "275px", mb: 1 }}
-                      onChange={(e) => {
-                        const copyOfAccomplishments = [
-                          ...listOfAccomplishments,
-                        ];
-                        copyOfAccomplishments.splice(i, 1, {
-                          ...accomplishment,
-                          body: e.target.value,
-                        });
-                        setListOfAccomplishments(copyOfAccomplishments);
-                      }}
-                      onKeyDown={(e) =>
-                        e.key === "Enter" && setIsUserEditing(false)
-                      }
-                    />
+                    <Fade in timeout={transitionTime}>
+                      <TextField
+                        variant="outlined"
+                        label="Brag"
+                        placeholder={"Write about your accomplishment here..."}
+                        value={accomplishment.body}
+                        multiline
+                        sx={{ minWidth: "275px", mb: 1 }}
+                        onChange={(e) => {
+                          const copyOfAccomplishments = [
+                            ...listOfAccomplishments,
+                          ];
+                          copyOfAccomplishments.splice(i, 1, {
+                            ...accomplishment,
+                            body: e.target.value,
+                          });
+                          setListOfAccomplishments(copyOfAccomplishments);
+                        }}
+                        onKeyDown={(e) =>
+                          e.key === "Enter" && setIsUserEditing(false)
+                        }
+                      />
+                    </Fade>
                   )}
                 </Box>
               </Box>
-            );
-          })}
-        </Stack>
-      </Fade>
+            </Fade>
+          );
+        })}
+      </Stack>
     </Box>
   );
 };
