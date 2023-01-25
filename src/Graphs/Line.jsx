@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import {
   CartesianGrid,
   Line as RechartsLine,
@@ -49,6 +49,7 @@ const data = [
 ];
 
 export const Line = ({ title }) => {
+  const theme = useTheme();
   return (
     <GraphWrapper fadeInCondition={true}>
       <Typography
@@ -77,7 +78,7 @@ export const Line = ({ title }) => {
             type="monotone"
             dataKey="Pages"
             strokeOpacity={1}
-            stroke="#8884d8"
+            stroke={theme.palette.primary.main}
             activeDot={{ r: 8 }}
           />
         </LineChart>

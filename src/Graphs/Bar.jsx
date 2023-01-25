@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import {
   Bar as RechartsBar,
   BarChart,
@@ -32,6 +32,7 @@ const data = [
 ];
 
 export const Bar = ({ title }) => {
+  const theme = useTheme();
   return (
     <GraphWrapper fadeInCondition={true}>
       <Typography
@@ -56,7 +57,7 @@ export const Bar = ({ title }) => {
           <XAxis dataKey="type" />
           <YAxis />
           <Tooltip />
-          <RechartsBar dataKey="Meetings" fill="#8884d8" />
+          <RechartsBar dataKey="Meetings" fill={theme.palette.primary.main} />
         </BarChart>
       </ResponsiveContainer>
     </GraphWrapper>
