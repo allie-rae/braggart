@@ -14,11 +14,11 @@ export const InteractiveEditIcon = ({
         fontSize: "1.1rem",
         color: isEditTriggered
           ? theme.palette.primary.main
-          : theme.palette.grey[400],
+          : theme.palette.grey[600],
         "&:hover": {
           color: isEditTriggered
             ? theme.palette.primary.main
-            : theme.palette.grey[900],
+            : theme.palette.common.black,
         },
       }}
       onClick={() => (isEditTriggered ? turnOffEdit() : turnOnEdit())}

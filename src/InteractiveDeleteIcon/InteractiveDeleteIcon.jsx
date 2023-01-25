@@ -15,11 +15,11 @@ export const InteractiveDeleteIcon = ({
           fontSize: "1.1rem",
           color: isUserConfirmingDelete
             ? theme.palette.primary.main
-            : theme.palette.grey[400],
+            : theme.palette.grey[600],
           "&:hover": {
             color: isUserConfirmingDelete
               ? theme.palette.primary.main
-              : theme.palette.grey[900],
+              : theme.palette.common.black,
           },
         }}
         onClick={() => (isUserConfirmingDelete ? onDelete() : onConfirm())}
