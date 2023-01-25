@@ -9,7 +9,7 @@ import {
   YAxis,
 } from "recharts";
 
-import { headerFontSize } from "../constants";
+import { graphMargins, graphTitleStyles } from "../constants";
 import { GraphWrapper } from "./index";
 
 const data = [
@@ -35,24 +35,11 @@ export const Bar = ({ title }) => {
   const theme = useTheme();
   return (
     <GraphWrapper fadeInCondition={true}>
-      <Typography
-        variant="h6"
-        sx={{ fontSize: headerFontSize, textAlign: "center", mb: 1 }}
-      >
+      <Typography variant="h6" sx={graphTitleStyles}>
         {title}
       </Typography>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          width="100%"
-          height="100%"
-          data={data}
-          margin={{
-            top: 10,
-            right: 40,
-            left: 0,
-            bottom: 20,
-          }}
-        >
+        <BarChart width="100%" height="100%" data={data} margin={graphMargins}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="type" />
           <YAxis />
