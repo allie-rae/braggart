@@ -16,7 +16,7 @@ export const Account = () => {
         }}
       >
         <Typography variant="h6" sx={{ fontSize: headerFontSize }}>
-          Account
+          Account Settings
         </Typography>
       </Box>
     </Box>

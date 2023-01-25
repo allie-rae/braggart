@@ -14,11 +14,11 @@ export const InteractiveDeleteIcon = ({
           cursor: "pointer",
           fontSize: "1.1rem",
           color: isUserConfirmingDelete
-            ? theme.palette.secondary.main
+            ? theme.palette.primary.main
             : theme.palette.grey[400],
           "&:hover": {
             color: isUserConfirmingDelete
-              ? theme.palette.secondary.main
+              ? theme.palette.primary.main
               : theme.palette.grey[900],
           },
         }}
@@ -29,7 +29,7 @@ export const InteractiveDeleteIcon = ({
           variant="body2"
           sx={{
             fontWeight: 800,
-            color: theme.palette.secondary.main,
+            color: theme.palette.primary.main,
             cursor: "pointer",
           }}
           onClick={() => onDelete()}

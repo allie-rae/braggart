@@ -13,11 +13,11 @@ export const InteractiveEditIcon = ({
         cursor: "pointer",
         fontSize: "1.1rem",
         color: isEditTriggered
-          ? theme.palette.secondary.main
+          ? theme.palette.primary.main
           : theme.palette.grey[400],
         "&:hover": {
           color: isEditTriggered
-            ? theme.palette.secondary.main
+            ? theme.palette.primary.main
             : theme.palette.grey[900],
         },
       }}

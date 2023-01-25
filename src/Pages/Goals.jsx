@@ -1,10 +1,12 @@
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
+import { headerFontSize } from "../constants";
 import { Bar, Line } from "../Graphs";
 
 export const Goals = () => {
   return (
-    <Box sx={{ marginBottom: 3, display: "flex", justifyContent: "center" }}>
+    <Box sx={{ marginBottom: 3, maxWidth: "100%" }}>
       <Box
         sx={{
           display: "flex",
@@ -12,11 +14,11 @@ export const Goals = () => {
           justifyContent: "center",
           alignItems: "center",
           marginTop: 3,
-          width: "600px",
-          maxWidth: "90%",
-          minWidth: "300px",
         }}
       >
+        <Typography variant="h6" sx={{ fontSize: headerFontSize, mb: 2 }}>
+          Goal Visualization
+        </Typography>
         <Line title="Number of Pages Read" />
         <Bar title="Number of Meetings Attended" />
       </Box>

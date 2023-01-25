@@ -34,6 +34,7 @@ export const BragList = ({
   return (
     <Box
       sx={{
+        width: "90%",
         maxWidth: "600px",
         marginTop: 3,
         marginLeft: 3,

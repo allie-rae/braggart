@@ -26,7 +26,7 @@ export const BragTimeline = () => {
     },
   ]);
   return (
-    <Box sx={{ marginBottom: 3 }}>
+    <Box sx={{ marginBottom: 3, maxWidth: "100%" }}>
       <Box
         sx={{
           display: "flex",

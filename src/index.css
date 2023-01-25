@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Ubuntu";
+  margin-right: -1px;
 }
 
 /* cyrillic-ext */
