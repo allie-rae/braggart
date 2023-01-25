@@ -5,5 +5,5 @@ export const formatTimestampDayMonthHourMinute = (timestamp) => {
 };
 
 export const formatTimestampDayMonth = (timestamp) => {
-  return format(new Date(timestamp), "E MMM dd");
+  return format(new Date(timestamp), "E d/M");
 };

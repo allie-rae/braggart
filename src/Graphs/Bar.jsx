@@ -1,66 +1,64 @@
-import { Fade } from "@mui/material";
-import { Box } from "@mui/system";
-import { useMemo } from "react";
-import { Chart } from "react-charts";
+import { Typography } from "@mui/material";
+import {
+  Bar as RechartsBar,
+  BarChart,
+  CartesianGrid,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
-import { transitionTime } from "../constants";
+import { headerFontSize } from "../constants";
+import { GraphWrapper } from "./index";
 
 const data = [
   {
-    label: "Meetings Attended",
-    data: [
-      {
-        type: "Design",
-        number: 15,
-      },
-      {
-        type: "Mentorship",
-        number: 20,
-      },
-      {
-        type: "Product",
-        number: 9,
-      },
-      {
-        type: "Engineering",
-        number: 35,
-      },
-    ],
+    type: "Design",
+    Meetings: 15,
+  },
+  {
+    type: "Mentorship",
+    Meetings: 20,
+  },
+  {
+    type: "Product",
+    Meetings: 9,
+  },
+  {
+    type: "Engineering",
+    Meetings: 35,
   },
 ];
 
-export const Bar = () => {
-  const primaryAxis = useMemo(
-    () => ({
-      getValue: (datum) => datum.type,
-    }),
-    []
-  );
-
-  const secondaryAxes = useMemo(
-    () => [
-      {
-        getValue: (datum) => datum.number,
-        elementType: "bar",
-      },
-    ],
-    []
-  );
-
+export const Bar = ({ title }) => {
   return (
-    <Fade
-      in={primaryAxis && !!secondaryAxes}
-      timeout={{ enter: transitionTime }}
-    >
-      <Box sx={{ height: "300px", width: "300px", marginBottom: 2 }}>
-        <Chart
-          options={{
-            data,
-            primaryAxis,
-            secondaryAxes,
+    <GraphWrapper fadeInCondition={true}>
+      <Typography
+        variant="h6"
+        sx={{ fontSize: headerFontSize, textAlign: "center", mb: 1 }}
+      >
+        {title}
+      </Typography>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          width="100%"
+          height="100%"
+          data={data}
+          margin={{
+            top: 10,
+            right: 40,
+            left: 0,
+            bottom: 20,
           }}
-        />
-      </Box>
-    </Fade>
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="type" />
+          <YAxis />
+          <Tooltip />
+          <RechartsBar dataKey="Meetings" fill="#8884d8" />
+        </BarChart>
+      </ResponsiveContainer>
+    </GraphWrapper>
   );
 };
