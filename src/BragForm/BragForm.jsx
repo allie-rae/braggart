@@ -61,7 +61,7 @@ export const BragForm = ({
                 headline: newAccomplishmentHeadline,
                 body: newAccomplishmentBodyText,
                 timestamp: Date.now(),
-                id: Math.random() * 10000,
+                id: Math.random() * 100000,
               },
               ...listOfAccomplishments,
             ]);
