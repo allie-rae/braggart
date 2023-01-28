@@ -1,18 +1,32 @@
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Fade, Typography, useTheme } from "@mui/material";
+import React, { useEffect, useState } from "react";
 
 import { transitionTime } from "../constants";
 
-export const InteractiveDeleteIcon = ({
-  isUserConfirmingDelete,
-  onConfirm,
-  onDelete,
-}) => {
+export const InteractiveDeleteIcon = ({ onDelete }) => {
   const theme = useTheme();
+  const [isUserConfirmingDelete, setIsUserConfirmingDelete] = useState(false);
+
+  useEffect(() => {
+    if (isUserConfirmingDelete !== null) {
+      const timer = setTimeout(() => {
+        setIsUserConfirmingDelete(null);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isUserConfirmingDelete]);
+
+  const onConfirmDelete = () => {
+    onDelete();
+    setIsUserConfirmingDelete(false);
+  };
+
   return (
     <>
       <Fade in timeout={transitionTime}>
         <DeleteOutlineIcon
+          data-testid="interactive-delete-icon"
           sx={{
             cursor: "pointer",
             fontSize: "1.1rem",
@@ -25,7 +39,11 @@ export const InteractiveDeleteIcon = ({
                 : theme.palette.common.black,
             },
           }}
-          onClick={() => (isUserConfirmingDelete ? onDelete() : onConfirm())}
+          onClick={() =>
+            isUserConfirmingDelete
+              ? onConfirmDelete()
+              : setIsUserConfirmingDelete(true)
+          }
         />
       </Fade>
       {isUserConfirmingDelete && (
@@ -37,7 +55,7 @@ export const InteractiveDeleteIcon = ({
               color: theme.palette.primary.main,
               cursor: "pointer",
             }}
-            onClick={() => onDelete()}
+            onClick={() => onConfirmDelete()}
           >
             ?
           </Typography>

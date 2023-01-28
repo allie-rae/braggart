@@ -19,17 +19,7 @@ export const BragList = ({
   setListOfAccomplishments,
 }) => {
   const theme = useTheme();
-  const [isUserConfirmingDelete, setIsUserConfirmingDelete] = useState(null);
   const [isUserEditing, setIsUserEditing] = useState(null);
-
-  useEffect(() => {
-    if (isUserConfirmingDelete !== null) {
-      const timer = setTimeout(() => {
-        setIsUserConfirmingDelete(null);
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [isUserConfirmingDelete]);
 
   return (
     <Box
@@ -120,19 +110,13 @@ export const BragList = ({
                         isEditTriggered={isUserEditing === accomplishment.id}
                       />
                       <InteractiveDeleteIcon
-                        onConfirm={() =>
-                          setIsUserConfirmingDelete(accomplishment.id)
-                        }
-                        onDelete={() =>
+                        onDelete={() => {
                           setListOfAccomplishments(
                             listOfAccomplishments.filter(
                               (accomp) => accomp.id !== accomplishment.id
                             )
-                          )
-                        }
-                        isUserConfirmingDelete={
-                          isUserConfirmingDelete === accomplishment.id
-                        }
+                          );
+                        }}
                       />
                     </Box>
                   </Box>
