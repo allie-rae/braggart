@@ -9,9 +9,9 @@ export const InteractiveDeleteIcon = ({ onDelete }) => {
   const [isUserConfirmingDelete, setIsUserConfirmingDelete] = useState(false);
 
   useEffect(() => {
-    if (isUserConfirmingDelete !== null) {
+    if (isUserConfirmingDelete) {
       const timer = setTimeout(() => {
-        setIsUserConfirmingDelete(null);
+        setIsUserConfirmingDelete(false);
       }, 3000);
       return () => clearTimeout(timer);
     }
