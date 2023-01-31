@@ -1,13 +1,13 @@
 {
   "root": true,
   "parser": "@babel/eslint-parser",
-  "plugins": ["react", "react-app", "simple-import-sort"],
+  "plugins": ["react", "simple-import-sort"],
   "extends": [
     "eslint:recommended",
     "plugin:react-hooks/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
-    "plugin:react-app"
+    "plugin:react-jest"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -23,6 +23,6 @@
     "func-style": "off",
     "react/react-in-jsx-scope": "off",
     "no-extra-boolean-cast": 0,
-    "no-unused-vars": "warn"
+    "no-unused-vars": "off"
   }
 }

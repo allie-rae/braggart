@@ -1,4 +1,5 @@
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
+import React from "react";
 import SaveIcon from "@mui/icons-material/Save";
 import { Fade, useTheme } from "@mui/material";
 
@@ -11,6 +12,7 @@ export const InteractiveEditIcon = ({ isEditTriggered, turnOnEdit, turnOffEdit }
       {!isEditTriggered && (
         <Fade in timeout={transitionTime}>
           <DriveFileRenameOutlineIcon
+            data-testid="edit-pencil-icon"
             sx={{
               cursor: "pointer",
               fontSize: "1.1rem",
@@ -26,6 +28,7 @@ export const InteractiveEditIcon = ({ isEditTriggered, turnOnEdit, turnOffEdit }
       {isEditTriggered && (
         <Fade in timeout={transitionTime}>
           <SaveIcon
+            data-testid="save-edit-icon"
             sx={{
               cursor: "pointer",
               fontSize: "1.1rem",
