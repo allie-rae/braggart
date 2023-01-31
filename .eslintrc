@@ -1,27 +1,27 @@
-{
-  "root": true,
-  "parser": "@babel/eslint-parser",
-  "plugins": ["react", "react-jest", "simple-import-sort"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime"
-  ],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module",
-    "ecmaFeatures": { "jsx": true }
-  },
-  "env": { "es6": true },
-  "rules": {
-    "react/prop-types": "warn",
-    "simple-import-sort/imports": "warn",
-    "simple-import-sort/exports": "warn",
-    "react/jsx-uses-vars": "off",
-    "func-style": "off",
-    "react/react-in-jsx-scope": "off",
-    "no-extra-boolean-cast": 0,
-    "no-unused-vars": "off"
-  }
-}
+// {
+//   "root": true,
+//   "parser": "@babel/eslint-parser",
+//   "plugins": ["react", "react-jest", "simple-import-sort"],
+//   "extends": [
+//     "eslint:recommended",
+//     "plugin:react-hooks/recommended",
+//     "plugin:react/recommended",
+//     "plugin:react/jsx-runtime"
+//   ],
+//   "parserOptions": {
+//     "ecmaVersion": "latest",
+//     "sourceType": "module",
+//     "ecmaFeatures": { "jsx": true }
+//   },
+//   "env": { "es6": true },
+//   "rules": {
+//     "react/prop-types": "warn",
+//     "simple-import-sort/imports": "warn",
+//     "simple-import-sort/exports": "warn",
+//     "react/jsx-uses-vars": "off",
+//     "func-style": "off",
+//     "react/react-in-jsx-scope": "off",
+//     "no-extra-boolean-cast": 0,
+//     "no-unused-vars": "off"
+//   }
+// }
