@@ -1,25 +1,28 @@
 {
   "root": true,
-  "parser": "",
-  "plugins": ["simple-import-sort"],
+  "parser": "@babel/eslint-parser",
+  "plugins": ["react", "simple-import-sort"],
   "extends": [
-    "react-app",
-    "plugin:react/recommended",
+    "plugin:react-app",
+    "eslint:recommended",
     "plugin:react-hooks/recommended",
-    "eslint:recommended"
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
   ],
   "parserOptions": {
-    "sourceType": "module"
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": { "jsx": true }
   },
   "env": { "es6": true },
   "rules": {
-    "react/prop-types": "off",
+    "react/prop-types": "warn",
     "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "warn",
     "react/jsx-uses-vars": "off",
     "func-style": "off",
     "react/react-in-jsx-scope": "off",
     "no-extra-boolean-cast": 0,
-    "no-unused-vars": "off"
+    "no-unused-vars": "warn"
   }
 }

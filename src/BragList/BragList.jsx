@@ -1,13 +1,14 @@
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import {
   Box,
+  Chip,
   Fade,
   Stack,
   TextField,
   Typography,
   useTheme,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { transitionTime } from "../constants";
 import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
@@ -150,6 +151,56 @@ export const BragList = ({
                       />
                     </Fade>
                   )}
+                  <Box>
+                    {isUserEditing !== accomplishment.id &&
+                      accomplishment.categories.map((category, catIndex) => {
+                        return (
+                          <Fade
+                            in
+                            key={`${catIndex}-${category}`}
+                            timeout={transitionTime}
+                          >
+                            <Chip
+                              label={category}
+                              variant="outlined"
+                              size="small"
+                              sx={{ mt: 1, mb: 1, mr: 1 }}
+                            />
+                          </Fade>
+                        );
+                      })}
+                    {isUserEditing === accomplishment.id &&
+                      accomplishment.categories.map((category, catIndex) => {
+                        return (
+                          <Fade
+                            in
+                            key={`${catIndex}-${category}`}
+                            timeout={transitionTime}
+                          >
+                            <Chip
+                              label={category}
+                              variant="outlined"
+                              size="small"
+                              sx={{ mt: 1, mb: 1, mr: 1 }}
+                              onDelete={() => {
+                                const copyOfCategories = [
+                                  ...listOfAccomplishments[i].categories,
+                                ];
+                                copyOfCategories.splice(catIndex, 1);
+                                const copyOfAccomplishments = [
+                                  ...listOfAccomplishments,
+                                ];
+                                copyOfAccomplishments.splice(i, 1, {
+                                  ...listOfAccomplishments[i],
+                                  categories: copyOfCategories,
+                                });
+                                setListOfAccomplishments(copyOfAccomplishments);
+                              }}
+                            />
+                          </Fade>
+                        );
+                      })}
+                  </Box>
                 </Box>
               </Box>
             </Fade>
