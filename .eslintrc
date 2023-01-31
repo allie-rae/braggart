@@ -1,13 +1,12 @@
 {
   "root": true,
   "parser": "@babel/eslint-parser",
-  "plugins": ["react", "simple-import-sort"],
+  "plugins": ["react", "react-jest", "simple-import-sort"],
   "extends": [
     "eslint:recommended",
     "plugin:react-hooks/recommended",
     "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-jest"
+    "plugin:react/jsx-runtime"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
