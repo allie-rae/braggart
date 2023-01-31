@@ -56,12 +56,11 @@ export const BragForm = ({ listOfAccomplishments, setListOfAccomplishments }) =>
             sx={{ minWidth: "275px", maxWidth: "275px", mb: 1 }}
             onChange={(e) => {
               const categories = e.target.value.toLowerCase().trim().split(/[ ,]+/).filter(Boolean);
-              console.log("categories", categories);
               setNewAccomplishmentCategoriesString(e.target.value);
               setNewAccomplishmentCategoriesList(categories);
             }}
           />
-          <Box sx={{ m: 1 }}>
+          <Box sx={{ mr: 1, mb: 1 }}>
             {newAccomplishmentCategoriesList.map((cat, catIdx) => (
               <Chip label={cat} key={`${catIdx}-${cat}`} size="small" />
             ))}
