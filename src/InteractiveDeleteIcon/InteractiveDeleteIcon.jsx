@@ -30,9 +30,7 @@ export const InteractiveDeleteIcon = ({ onDelete }) => {
           sx={{
             cursor: "pointer",
             fontSize: "1.1rem",
-            color: isUserConfirmingDelete
-              ? theme.palette.primary.main
-              : theme.palette.grey[600],
+            color: isUserConfirmingDelete ? theme.palette.primary.main : theme.palette.grey[600],
             "&:hover": {
               color: isUserConfirmingDelete
                 ? theme.palette.primary.main
@@ -40,9 +38,7 @@ export const InteractiveDeleteIcon = ({ onDelete }) => {
             },
           }}
           onClick={() =>
-            isUserConfirmingDelete
-              ? onConfirmDelete()
-              : setIsUserConfirmingDelete(true)
+            isUserConfirmingDelete ? onConfirmDelete() : setIsUserConfirmingDelete(true)
           }
         />
       </Fade>

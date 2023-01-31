@@ -8,9 +8,7 @@ jest.spyOn(global, "setTimeout");
 
 test("Question mark appears after user clicks trash icon 1 time then disappears after 3 seconds", () => {
   const deleteFunc = jest.fn();
-  const { queryByText, getByTestId } = render(
-    <InteractiveDeleteIcon onDelete={deleteFunc} />
-  );
+  const { queryByText, getByTestId } = render(<InteractiveDeleteIcon onDelete={deleteFunc} />);
 
   expect(queryByText("?")).not.toBeInTheDocument();
 
@@ -26,9 +24,7 @@ test("Question mark appears after user clicks trash icon 1 time then disappears 
 
 test("onDelete function runs after trash icon is clicked twice", () => {
   const deleteFunc = jest.fn();
-  const { getByTestId } = render(
-    <InteractiveDeleteIcon onDelete={deleteFunc} />
-  );
+  const { getByTestId } = render(<InteractiveDeleteIcon onDelete={deleteFunc} />);
 
   fireEvent.click(getByTestId("interactive-delete-icon"));
   fireEvent.click(getByTestId("interactive-delete-icon"));

@@ -1,4 +1,1 @@
-export {
-  formatTimestampDayMonth,
-  formatTimestampDayMonthHourMinute,
-} from "./formatTimestamp";
+export { formatTimestampDayMonth, formatTimestampDayMonthHourMinute } from "./formatTimestamp";

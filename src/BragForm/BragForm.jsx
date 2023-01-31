@@ -6,20 +6,11 @@ import { headerFontSize } from "../constants";
 
 const stepNameMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
 
-export const BragForm = ({
-  listOfAccomplishments,
-  setListOfAccomplishments,
-}) => {
-  const [newAccomplishmentHeadline, setNewAccomplishmentHeadline] =
-    useState("");
-  const [newAccomplishmentBodyText, setNewAccomplishmentBodyText] =
-    useState("");
-  const [
-    newAccomplishmentCategoriesString,
-    setNewAccomplishmentCategoriesString,
-  ] = useState("");
-  const [newAccomplishmentCategoriesList, setNewAccomplishmentCategoriesList] =
-    useState([]);
+export const BragForm = ({ listOfAccomplishments, setListOfAccomplishments }) => {
+  const [newAccomplishmentHeadline, setNewAccomplishmentHeadline] = useState("");
+  const [newAccomplishmentBodyText, setNewAccomplishmentBodyText] = useState("");
+  const [newAccomplishmentCategoriesString, setNewAccomplishmentCategoriesString] = useState("");
+  const [newAccomplishmentCategoriesList, setNewAccomplishmentCategoriesList] = useState([]);
   const [step, setStep] = useState(1);
   return (
     <Box
@@ -64,11 +55,7 @@ export const BragForm = ({
             value={newAccomplishmentCategoriesString}
             sx={{ minWidth: "275px", maxWidth: "275px", mb: 1 }}
             onChange={(e) => {
-              const categories = e.target.value
-                .toLowerCase()
-                .trim()
-                .split(/[ ,]+/)
-                .filter(Boolean);
+              const categories = e.target.value.toLowerCase().trim().split(/[ ,]+/).filter(Boolean);
               console.log("categories", categories);
               setNewAccomplishmentCategoriesString(e.target.value);
               setNewAccomplishmentCategoriesList(categories);
@@ -110,6 +97,8 @@ export const BragForm = ({
             ]);
             setNewAccomplishmentHeadline("");
             setNewAccomplishmentBodyText("");
+            setNewAccomplishmentCategoriesString("");
+            setNewAccomplishmentCategoriesList([]);
             setStep(1);
           }
         }}

@@ -1,13 +1,5 @@
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import {
-  Box,
-  Chip,
-  Fade,
-  Stack,
-  TextField,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Chip, Fade, Stack, TextField, Typography, useTheme } from "@mui/material";
 import React, { useState } from "react";
 
 import { transitionTime } from "../constants";
@@ -15,10 +7,7 @@ import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
 import { InteractiveEditIcon } from "../InteractiveEditIcon";
 import { formatTimestampDayMonthHourMinute } from "../utils/formatTimestamp";
 
-export const BragList = ({
-  listOfAccomplishments,
-  setListOfAccomplishments,
-}) => {
+export const BragList = ({ listOfAccomplishments, setListOfAccomplishments }) => {
   const theme = useTheme();
   const [isUserEditing, setIsUserEditing] = useState(null);
 
@@ -35,11 +24,7 @@ export const BragList = ({
       <Stack spacing={3}>
         {listOfAccomplishments.map((accomplishment, i) => {
           return (
-            <Fade
-              in
-              timeout={transitionTime}
-              key={`${i}-${accomplishment.title}`}
-            >
+            <Fade in timeout={transitionTime} key={`${i}-${accomplishment.title}`}>
               <Box
                 sx={{
                   display: "flex",
@@ -88,18 +73,14 @@ export const BragList = ({
                             value={accomplishment.headline}
                             sx={{ minWidth: "275px", mb: 1 }}
                             onChange={(e) => {
-                              const copyOfAccomplishments = [
-                                ...listOfAccomplishments,
-                              ];
+                              const copyOfAccomplishments = [...listOfAccomplishments];
                               copyOfAccomplishments.splice(i, 1, {
                                 ...accomplishment,
                                 headline: e.target.value,
                               });
                               setListOfAccomplishments(copyOfAccomplishments);
                             }}
-                            onKeyDown={(e) =>
-                              e.key === "Enter" && setIsUserEditing(false)
-                            }
+                            onKeyDown={(e) => e.key === "Enter" && setIsUserEditing(false)}
                           />
                         </Fade>
                       )}
@@ -136,18 +117,14 @@ export const BragList = ({
                         multiline
                         sx={{ minWidth: "275px", mb: 1 }}
                         onChange={(e) => {
-                          const copyOfAccomplishments = [
-                            ...listOfAccomplishments,
-                          ];
+                          const copyOfAccomplishments = [...listOfAccomplishments];
                           copyOfAccomplishments.splice(i, 1, {
                             ...accomplishment,
                             body: e.target.value,
                           });
                           setListOfAccomplishments(copyOfAccomplishments);
                         }}
-                        onKeyDown={(e) =>
-                          e.key === "Enter" && setIsUserEditing(false)
-                        }
+                        onKeyDown={(e) => e.key === "Enter" && setIsUserEditing(false)}
                       />
                     </Fade>
                   )}
@@ -155,11 +132,7 @@ export const BragList = ({
                     {isUserEditing !== accomplishment.id &&
                       accomplishment.categories.map((category, catIndex) => {
                         return (
-                          <Fade
-                            in
-                            key={`${catIndex}-${category}`}
-                            timeout={transitionTime}
-                          >
+                          <Fade in key={`${catIndex}-${category}`} timeout={transitionTime}>
                             <Chip
                               label={category}
                               variant="outlined"
@@ -172,24 +145,16 @@ export const BragList = ({
                     {isUserEditing === accomplishment.id &&
                       accomplishment.categories.map((category, catIndex) => {
                         return (
-                          <Fade
-                            in
-                            key={`${catIndex}-${category}`}
-                            timeout={transitionTime}
-                          >
+                          <Fade in key={`${catIndex}-${category}`} timeout={transitionTime}>
                             <Chip
                               label={category}
                               variant="outlined"
                               size="small"
                               sx={{ mt: 1, mb: 1, mr: 1 }}
                               onDelete={() => {
-                                const copyOfCategories = [
-                                  ...listOfAccomplishments[i].categories,
-                                ];
+                                const copyOfCategories = [...listOfAccomplishments[i].categories];
                                 copyOfCategories.splice(catIndex, 1);
-                                const copyOfAccomplishments = [
-                                  ...listOfAccomplishments,
-                                ];
+                                const copyOfAccomplishments = [...listOfAccomplishments];
                                 copyOfAccomplishments.splice(i, 1, {
                                   ...listOfAccomplishments[i],
                                   categories: copyOfCategories,
