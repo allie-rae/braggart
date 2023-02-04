@@ -29,7 +29,7 @@ export const Navigation = () => {
                 size="large"
                 edge="end"
                 aria-label="account"
-                onClick={() => navigate("timeline")}
+                onClick={() => navigate("/")}
               >
                 <ViewTimelineIcon />
               </IconButton>

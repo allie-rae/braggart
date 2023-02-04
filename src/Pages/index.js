@@ -1,5 +1,5 @@
 export { Account } from "./Account";
-export { BragTimeline } from "./BragTimeline";
+export { BragPage } from "./BragPage";
 export { FullPageLoader } from "./FullPageLoader";
 export { Goals } from "./Goals";
 export { PageNotFound } from "./PageNotFound";

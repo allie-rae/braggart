@@ -2,9 +2,9 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 
 import { BragForm } from "../BragForm";
-import { BragList } from "../BragList";
+import { BragTimeline } from "../BragTimeline";
 
-export const BragTimeline = () => {
+export const BragPage = () => {
   const [listOfAccomplishments, setListOfAccomplishments] = useState([
     {
       headline: "Completed dependecy extraction",
@@ -43,7 +43,7 @@ export const BragTimeline = () => {
           listOfAccomplishments={listOfAccomplishments}
           setListOfAccomplishments={setListOfAccomplishments}
         />
-        <BragList
+        <BragTimeline
           listOfAccomplishments={listOfAccomplishments}
           setListOfAccomplishments={setListOfAccomplishments}
         />

@@ -6,7 +6,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
-import { Account, BragTimeline, Goals, PageNotFound } from "./Pages";
+import { Account, BragPage, Goals, PageNotFound } from "./Pages";
 import reportWebVitals from "./reportWebVitals";
 import { themeOptions } from "./theme";
 
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <PageNotFound />,
     children: [
-      { path: "/timeline", element: <BragTimeline /> },
+      { path: "/", element: <BragPage /> },
       { path: "/account", element: <Account /> },
       { path: "/goals", element: <Goals /> },
       { path: "/404", element: <PageNotFound /> },

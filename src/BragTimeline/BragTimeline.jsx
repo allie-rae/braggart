@@ -7,7 +7,7 @@ import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
 import { InteractiveEditIcon } from "../InteractiveEditIcon";
 import { formatTimestampDayMonthHourMinute } from "../utils/formatTimestamp";
 
-export const BragList = ({ listOfAccomplishments, setListOfAccomplishments }) => {
+export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }) => {
   const theme = useTheme();
   const [isUserEditing, setIsUserEditing] = useState(null);
 

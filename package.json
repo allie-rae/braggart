@@ -26,7 +26,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.js src/**/*.jsx"
   },
   "browserslist": {
     "production": [
@@ -42,7 +43,6 @@
   },
   "devDependencies": {
     "eslint": "^8.33.0",
-    "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^9.0.0",
     "prettier": "2.7.1"

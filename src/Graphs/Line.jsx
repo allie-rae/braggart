@@ -9,7 +9,7 @@ import {
   YAxis,
 } from "recharts";
 
-import { graphMargins, graphTitleStyles, headerFontSize } from "../constants";
+import { graphMargins, graphTitleStyles } from "../constants";
 import { formatTimestampDayMonth } from "../utils/formatTimestamp";
 import { GraphWrapper } from "./index";
 
