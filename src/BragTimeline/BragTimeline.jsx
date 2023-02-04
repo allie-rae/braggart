@@ -186,7 +186,7 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                       })}
                     {isUserEditing === accomplishment.id && (
                       <Chip
-                        label="Add New Category"
+                        label="Add New Categories"
                         variant="outlined"
                         size="small"
                         sx={{ mt: 1, mb: 1, mr: 1 }}
