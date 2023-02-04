@@ -55,7 +55,7 @@ export const BragForm = ({ listOfAccomplishments, setListOfAccomplishments }) =>
             value={newAccomplishmentCategoriesString}
             sx={{ minWidth: "275px", maxWidth: "275px", mb: 1 }}
             onChange={(e) => {
-              const categories = e.target.value.toLowerCase().trim().split(/[ ,]+/).filter(Boolean);
+              const categories = e.target.value.trim().split(/[ ,]+/).filter(Boolean);
               setNewAccomplishmentCategoriesString(e.target.value);
               setNewAccomplishmentCategoriesList(categories);
             }}

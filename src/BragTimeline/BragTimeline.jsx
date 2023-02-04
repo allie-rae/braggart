@@ -6,10 +6,29 @@ import { transitionTime } from "../constants";
 import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
 import { InteractiveEditIcon } from "../InteractiveEditIcon";
 import { formatTimestampDayMonthHourMinute } from "../utils/formatTimestamp";
+import AddIcon from "@mui/icons-material/Add";
 
 export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }) => {
   const theme = useTheme();
   const [isUserEditing, setIsUserEditing] = useState(null);
+  const [isUserAddingCategory, setIsUserAddingCategory] = useState(false);
+  const [categoriesAddedString, setCategoriesAddedString] = useState("");
+  const [categoriesAddedList, setCategoriesAddedList] = useState([]);
+
+  const onTurnOffEdit = (accomplishmentIndex) => {
+    const copyOfAccomplishments = [...listOfAccomplishments];
+    copyOfAccomplishments[accomplishmentIndex].categories.push(...categoriesAddedList);
+    setCategoriesAddedString("");
+    setCategoriesAddedList([]);
+    setIsUserAddingCategory(false);
+    setIsUserEditing(null);
+  };
+
+  const onChangeCategory = (e) => {
+    const categories = e.target.value.trim().split(/[ ,]+/).filter(Boolean);
+    setCategoriesAddedString(e.target.value);
+    setCategoriesAddedList(categories);
+  };
 
   return (
     <Box
@@ -88,7 +107,7 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                     <Box sx={{ display: "flex", alignItems: "center" }}>
                       <InteractiveEditIcon
                         turnOnEdit={() => setIsUserEditing(accomplishment.id)}
-                        turnOffEdit={() => setIsUserEditing(null)}
+                        turnOffEdit={() => onTurnOffEdit(i)}
                         isEditTriggered={isUserEditing === accomplishment.id}
                       />
                       <InteractiveDeleteIcon
@@ -165,6 +184,44 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                           </Fade>
                         );
                       })}
+                    {isUserEditing === accomplishment.id && (
+                      <Chip
+                        label="Add New Category"
+                        variant="outlined"
+                        size="small"
+                        sx={{ mt: 1, mb: 1, mr: 1 }}
+                        icon={<AddIcon />}
+                        onClick={() => setIsUserAddingCategory(true)}
+                      />
+                    )}
+                    {isUserEditing === accomplishment.id &&
+                      isUserAddingCategory &&
+                      categoriesAddedList.map((addedCat, addedCatIndex) => {
+                        return (
+                          <Chip
+                            key={`${addedCatIndex}-${addedCat}`}
+                            label={addedCat}
+                            variant="outlined"
+                            size="small"
+                            sx={{ mt: 1, mb: 1, mr: 1 }}
+                            icon={<AddIcon />}
+                          />
+                        );
+                      })}
+                    {isUserEditing === accomplishment.id && isUserAddingCategory && (
+                      <Box sx={{ display: "block" }}>
+                        <Fade in timeout={transitionTime}>
+                          <TextField
+                            variant="outlined"
+                            label="Add Categories"
+                            placeholder={"Add new categories here..."}
+                            value={categoriesAddedString}
+                            sx={{ minWidth: "275px", mb: 1 }}
+                            onChange={(e) => onChangeCategory(e)}
+                          />
+                        </Fade>
+                      </Box>
+                    )}
                   </Box>
                 </Box>
               </Box>
