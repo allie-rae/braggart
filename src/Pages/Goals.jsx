@@ -19,8 +19,8 @@ export const Goals = () => {
         <Typography variant="h6" sx={{ fontSize: headerFontSize, mb: 2 }}>
           Goal Visualization
         </Typography>
+        <Bar title="Number of Accomplishments By Category" />
         <Line title="Number of Pages Read" />
-        <Bar title="Number of Meetings Attended" />
       </Box>
     </Box>
   );
