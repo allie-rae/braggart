@@ -36,7 +36,9 @@ export const Bar = ({ title }) => {
 
   const graphData = Object.values(categoryCounts);
 
-  console.log("graphData", graphData);
+  if (!graphData.length) {
+    return null;
+  }
 
   return (
     <GraphWrapper fadeInCondition={true}>

@@ -18,6 +18,7 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
   const onTurnOffEdit = (accomplishmentIndex) => {
     const copyOfAccomplishments = [...listOfAccomplishments];
     copyOfAccomplishments[accomplishmentIndex].categories.push(...categoriesAddedList);
+    setListOfAccomplishments(copyOfAccomplishments);
     setCategoriesAddedString("");
     setCategoriesAddedList([]);
     setIsUserAddingCategory(false);
@@ -175,7 +176,7 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                                 copyOfCategories.splice(catIndex, 1);
                                 const copyOfAccomplishments = [...listOfAccomplishments];
                                 copyOfAccomplishments.splice(i, 1, {
-                                  ...listOfAccomplishments[i],
+                                  ...copyOfAccomplishments[i],
                                   categories: copyOfCategories,
                                 });
                                 setListOfAccomplishments(copyOfAccomplishments);
