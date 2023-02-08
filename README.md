@@ -12,3 +12,5 @@ I'm adding to this app a little at a time. Progress on the frontend so far:
 - Colorblind-friendly
 - Routing
 - Added basic graphs
+- Categories for accomplishments
+- One graph connects to categories
