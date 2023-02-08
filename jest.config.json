@@ -1,0 +1,9 @@
+{
+  "clearMocks": true,
+  "collectCoverage": true,
+  "coverageDirectory": "coverage",
+  "coveragePathIgnorePatterns": ["/node_modules/"],
+  "moduleFileExtensions": ["js", "jsx", "json"],
+  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"],
+  "testEnvironment": "jsdom"
+}

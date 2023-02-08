@@ -4,9 +4,10 @@ import React from "react";
 import { InteractiveDeleteIcon } from "./InteractiveDeleteIcon";
 
 jest.useFakeTimers();
+// eslint-disable-next-line
 jest.spyOn(global, "setTimeout");
 
-test("Question mark appears after user clicks trash icon 1 time then disappears after 3 seconds", () => {
+test("Question mark appears after user clicks trash icon 1 time then disappears after timer runs", () => {
   const deleteFunc = jest.fn();
   const { queryByText, getByTestId } = render(<InteractiveDeleteIcon onDelete={deleteFunc} />);
 

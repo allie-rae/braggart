@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest/globals": true
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "overrides": [],
@@ -9,7 +10,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "jest"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
@@ -27,8 +28,6 @@
 //       "eslint:recommended"
 //     ],
 //     "parserOptions": {
-//       "ecmaVersion": "latest",
-//       "sourceType": "module",
 //       "ecmaFeatures": {
 //         "jsx": true
 //       }
@@ -37,13 +36,8 @@
 //       "es6": true
 //     },
 //     "rules": {
-//       "react/prop-types": "warn",
-//       "simple-import-sort/imports": "warn",
-//       "simple-import-sort/exports": "warn",
 //       "react/jsx-uses-vars": "off",
 //       "func-style": "off",
-//       "react/react-in-jsx-scope": "off",
 //       "no-extra-boolean-cast": 0,
-//       "no-unused-vars": "warn"
 //     }
 //   },
