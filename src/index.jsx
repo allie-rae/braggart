@@ -5,24 +5,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from "./App";
-import { Account, BragPage, Goals, PageNotFound } from "./Pages";
 import reportWebVitals from "./reportWebVitals";
 import { themeOptions } from "./theme";
+import { routes } from "./routes";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <PageNotFound />,
-    children: [
-      { path: "/", element: <BragPage /> },
-      { path: "/account", element: <Account /> },
-      { path: "/goals", element: <Goals /> },
-      { path: "/404", element: <PageNotFound /> },
-    ],
-  },
-]);
+const router = createBrowserRouter(routes);
 
 const customTheme = createTheme(themeOptions);
 const root = ReactDOM.createRoot(document.getElementById("root"));
