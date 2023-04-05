@@ -9,7 +9,6 @@ import { formatTimestampDayMonthHourMinute } from "../utils/formatTimestamp";
 import AddIcon from "@mui/icons-material/Add";
 
 export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }) => {
-  const theme = useTheme();
   const [isUserEditing, setIsUserEditing] = useState(null);
   const [isUserAddingCategory, setIsUserAddingCategory] = useState(false);
   const [categoriesAddedString, setCategoriesAddedString] = useState("");
@@ -75,9 +74,9 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                           <CheckCircleOutlineIcon
                             sx={{
                               marginRight: 0.6,
-                              color: theme.palette.primary.main,
                               fontSize: "1.1rem",
                             }}
+                            color="primary"
                           />
                           <Typography variant="h6" sx={{ fontSize: "1rem" }}>
                             {accomplishment.headline}
