@@ -7,6 +7,10 @@ export const themeOptions = {
       main: "#5200CC",
       contrastText: "#FFF",
     },
+    secondary: {
+      main: "#B800CC",
+      contrastText: "#FFF",
+    },
   },
   typography: {
     fontFamily: [
