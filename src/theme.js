@@ -28,6 +28,8 @@ export const themeOptions = {
     },
     h6: {
       fontSize: "1.1rem",
+      marginTop: "0.25rem",
+      marginBottom: "0.25rem",
     },
     button: {
       textTransform: "none",

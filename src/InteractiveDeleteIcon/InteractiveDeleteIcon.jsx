@@ -29,12 +29,9 @@ export const InteractiveDeleteIcon = ({ onDelete }) => {
           data-testid="interactive-delete-icon"
           sx={{
             cursor: "pointer",
-            fontSize: "1.1rem",
-            color: isUserConfirmingDelete ? theme.palette.primary.main : theme.palette.grey[600],
+            color: isUserConfirmingDelete ? "primary.main" : theme.palette.grey[600],
             "&:hover": {
-              color: isUserConfirmingDelete
-                ? theme.palette.primary.main
-                : theme.palette.common.black,
+              color: isUserConfirmingDelete ? "primary.main" : "common.black",
             },
           }}
           onClick={() =>
@@ -45,10 +42,9 @@ export const InteractiveDeleteIcon = ({ onDelete }) => {
       {isUserConfirmingDelete && (
         <Fade in timeout={transitionTime}>
           <Typography
-            variant="body2"
+            variant="h6"
+            color="primary"
             sx={{
-              fontWeight: 800,
-              color: theme.palette.primary.main,
               cursor: "pointer",
             }}
             onClick={() => onConfirmDelete()}

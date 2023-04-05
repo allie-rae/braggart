@@ -15,7 +15,6 @@ export const InteractiveEditIcon = ({ isEditTriggered, turnOnEdit, turnOffEdit }
             data-testid="edit-pencil-icon"
             sx={{
               cursor: "pointer",
-              fontSize: "1.1rem",
               color: theme.palette.grey[600],
               "&:hover": {
                 color: theme.palette.common.black,
@@ -31,7 +30,6 @@ export const InteractiveEditIcon = ({ isEditTriggered, turnOnEdit, turnOffEdit }
             data-testid="save-edit-icon"
             sx={{
               cursor: "pointer",
-              fontSize: "1.1rem",
               color: theme.palette.primary.main,
               "&:hover": {
                 color: theme.palette.primary.main,
