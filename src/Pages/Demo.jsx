@@ -3,8 +3,6 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { headerFontSize } from "../constants";
-
 const dummyAccomplishments = { books: 5, meetings: 15, courses: 2 };
 
 export const Demo = () => {
@@ -43,9 +41,7 @@ export const Demo = () => {
           marginTop: 3,
         }}
       >
-        <Typography variant="h6" sx={{ fontSize: headerFontSize }}>
-          Query Parameter Demo
-        </Typography>
+        <Typography variant="h6">Query Parameter Demo</Typography>
         <Box sx={{ mt: 2, display: "flex" }}>
           <Stack spacing={1} direction="row">
             <FormGroup>

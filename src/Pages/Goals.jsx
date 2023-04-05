@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
-import { headerFontSize } from "../constants";
 import { Bar, Line } from "../Graphs";
 
 export const Goals = () => {
@@ -16,7 +15,7 @@ export const Goals = () => {
           marginTop: 3,
         }}
       >
-        <Typography variant="h6" sx={{ fontSize: headerFontSize, mb: 2 }}>
+        <Typography variant="h6" sx={{ mb: 2 }}>
           Goal Visualization
         </Typography>
         <Bar title="Number of Accomplishments By Category" />

@@ -1,8 +1,6 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
-import { headerFontSize } from "../constants";
-
 export const Account = () => {
   return (
     <Box sx={{ marginBottom: 3 }}>
@@ -15,9 +13,7 @@ export const Account = () => {
           marginTop: 3,
         }}
       >
-        <Typography variant="h6" sx={{ fontSize: headerFontSize }}>
-          Account Settings
-        </Typography>
+        <Typography variant="h6">Account Settings</Typography>
       </Box>
     </Box>
   );

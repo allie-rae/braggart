@@ -1,4 +1,3 @@
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { Box, Chip, Fade, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 
@@ -30,6 +29,13 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
     setCategoriesAddedList(categories);
   };
 
+  const isUserEditingThisAccomplishment = (accomplishmentId) => {
+    if (isUserEditing === accomplishmentId) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <Box
       sx={{
@@ -51,7 +57,7 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                   justifyContent: "flex-start",
                 }}
               >
-                <Typography variant="overline">
+                <Typography variant="caption">
                   {formatTimestampDayMonthHourMinute(accomplishment.timestamp)}
                 </Typography>
                 <Box
@@ -70,27 +76,16 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                   >
                     <Box sx={{ display: "flex", alignItems: "center" }}>
                       {isUserEditing !== accomplishment.id && (
-                        <>
-                          <CheckCircleOutlineIcon
-                            sx={{
-                              marginRight: 0.6,
-                              fontSize: "1.1rem",
-                            }}
-                            color="primary"
-                          />
-                          <Typography variant="h6" sx={{ fontSize: "1rem" }}>
-                            {accomplishment.headline}
-                          </Typography>
-                        </>
+                        <Typography variant="h6">{accomplishment.headline}</Typography>
                       )}
-                      {isUserEditing === accomplishment.id && (
+                      {isUserEditingThisAccomplishment(accomplishment.id) && (
                         <Fade in timeout={transitionTime}>
                           <TextField
                             label="Headline"
                             variant="outlined"
                             placeholder={"Type your headline here..."}
                             value={accomplishment.headline}
-                            sx={{ minWidth: "275px", mb: 1 }}
+                            sx={{ minWidth: "275px", mb: 1, mt: 1 }}
                             onChange={(e) => {
                               const copyOfAccomplishments = [...listOfAccomplishments];
                               copyOfAccomplishments.splice(i, 1, {
@@ -121,12 +116,10 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                       />
                     </Box>
                   </Box>
-                  {isUserEditing !== accomplishment.id && (
-                    <Typography variant="body2" sx={{ marginLeft: "23px" }}>
-                      {accomplishment.body}
-                    </Typography>
+                  {!isUserEditingThisAccomplishment(accomplishment.id) && (
+                    <Typography variant="body1">{accomplishment.body}</Typography>
                   )}
-                  {isUserEditing === accomplishment.id && (
+                  {isUserEditingThisAccomplishment(accomplishment.id) && (
                     <Fade in timeout={transitionTime}>
                       <TextField
                         variant="outlined"
@@ -148,27 +141,25 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                     </Fade>
                   )}
                   <Box>
-                    {isUserEditing !== accomplishment.id &&
+                    {!isUserEditingThisAccomplishment(accomplishment.id) &&
                       accomplishment.categories.map((category, catIndex) => {
                         return (
                           <Fade in key={`${catIndex}-${category}`} timeout={transitionTime}>
                             <Chip
                               label={category}
                               variant="outlined"
-                              size="small"
-                              sx={{ mt: 1, mb: 1, mr: 1 }}
+                              sx={{ mb: 1, mr: 1, mt: 1 }}
                             />
                           </Fade>
                         );
                       })}
-                    {isUserEditing === accomplishment.id &&
+                    {isUserEditingThisAccomplishment(accomplishment.id) &&
                       accomplishment.categories.map((category, catIndex) => {
                         return (
                           <Fade in key={`${catIndex}-${category}`} timeout={transitionTime}>
                             <Chip
                               label={category}
                               variant="outlined"
-                              size="small"
                               sx={{ mt: 1, mb: 1, mr: 1 }}
                               onDelete={() => {
                                 const copyOfCategories = [...listOfAccomplishments[i].categories];
@@ -184,17 +175,16 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                           </Fade>
                         );
                       })}
-                    {isUserEditing === accomplishment.id && (
+                    {isUserEditingThisAccomplishment(accomplishment.id) && (
                       <Chip
                         label="Add New Categories"
                         variant="outlined"
-                        size="small"
                         sx={{ mt: 1, mb: 1, mr: 1 }}
                         icon={<AddIcon />}
                         onClick={() => setIsUserAddingCategory(true)}
                       />
                     )}
-                    {isUserEditing === accomplishment.id &&
+                    {isUserEditingThisAccomplishment(accomplishment.id) &&
                       isUserAddingCategory &&
                       categoriesAddedList.map((addedCat, addedCatIndex) => {
                         return (
@@ -202,13 +192,12 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                             key={`${addedCatIndex}-${addedCat}`}
                             label={addedCat}
                             variant="outlined"
-                            size="small"
                             sx={{ mt: 1, mb: 1, mr: 1 }}
                             icon={<AddIcon />}
                           />
                         );
                       })}
-                    {isUserEditing === accomplishment.id && isUserAddingCategory && (
+                    {isUserEditingThisAccomplishment(accomplishment.id) && isUserAddingCategory && (
                       <Box sx={{ display: "block" }}>
                         <Fade in timeout={transitionTime}>
                           <TextField

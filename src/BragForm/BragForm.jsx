@@ -2,8 +2,6 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { Box, Button, Chip, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
-import { headerFontSize } from "../constants";
-
 const stepNameMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
 
 export const BragForm = ({ listOfAccomplishments, setListOfAccomplishments }) => {
@@ -19,10 +17,7 @@ export const BragForm = ({ listOfAccomplishments, setListOfAccomplishments }) =>
         flexDirection: "column",
       }}
     >
-      <Typography
-        variant="h6"
-        sx={{ fontSize: headerFontSize, marginBottom: 1, textAlign: "center" }}
-      >
+      <Typography variant="h6" sx={{ marginBottom: 1, textAlign: "center" }}>
         Step {step}: {stepNameMap[step]}
       </Typography>
       {step === 1 && (

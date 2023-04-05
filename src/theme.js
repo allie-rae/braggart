@@ -23,5 +23,15 @@ export const themeOptions = {
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(","),
+    caption: {
+      fontSize: "0.8125rem",
+    },
+    h6: {
+      fontSize: "1.1rem",
+    },
+    button: {
+      textTransform: "none",
+      fontSize: "1rem",
+    },
   },
 };
