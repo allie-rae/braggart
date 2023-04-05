@@ -1,5 +1,5 @@
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import { Box, Chip, Fade, Stack, TextField, Typography, useTheme } from "@mui/material";
+import { Box, Chip, Fade, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 import { transitionTime } from "../constants";
