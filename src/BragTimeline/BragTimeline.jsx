@@ -117,7 +117,9 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                     </Box>
                   </Box>
                   {!isUserEditingThisAccomplishment(accomplishment.id) && (
-                    <Typography variant="body1">{accomplishment.body}</Typography>
+                    <Typography variant="body1" sx={{ mb: 1 }}>
+                      {accomplishment.body}
+                    </Typography>
                   )}
                   {isUserEditingThisAccomplishment(accomplishment.id) && (
                     <Fade in timeout={transitionTime}>
@@ -145,11 +147,7 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                       accomplishment.categories.map((category, catIndex) => {
                         return (
                           <Fade in key={`${catIndex}-${category}`} timeout={transitionTime}>
-                            <Chip
-                              label={category}
-                              variant="outlined"
-                              sx={{ mb: 1, mr: 1, mt: 1 }}
-                            />
+                            <Chip label={category} variant="outlined" sx={{ mr: 1 }} />
                           </Fade>
                         );
                       })}
@@ -160,7 +158,7 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                             <Chip
                               label={category}
                               variant="outlined"
-                              sx={{ mt: 1, mb: 1, mr: 1 }}
+                              sx={{ mr: 1 }}
                               onDelete={() => {
                                 const copyOfCategories = [...listOfAccomplishments[i].categories];
                                 copyOfCategories.splice(catIndex, 1);
@@ -179,7 +177,7 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                       <Chip
                         label="Add New Categories"
                         variant="outlined"
-                        sx={{ mt: 1, mb: 1, mr: 1 }}
+                        sx={{ mr: 1 }}
                         icon={<AddIcon />}
                         onClick={() => setIsUserAddingCategory(true)}
                       />
@@ -192,20 +190,21 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                             key={`${addedCatIndex}-${addedCat}`}
                             label={addedCat}
                             variant="outlined"
-                            sx={{ mt: 1, mb: 1, mr: 1 }}
+                            sx={{ mr: 1 }}
                             icon={<AddIcon />}
                           />
                         );
                       })}
                     {isUserEditingThisAccomplishment(accomplishment.id) && isUserAddingCategory && (
-                      <Box sx={{ display: "block" }}>
+                      <Box sx={{ display: "block", mt: 1 }}>
                         <Fade in timeout={transitionTime}>
                           <TextField
+                            autoFocus
                             variant="outlined"
                             label="Add Categories"
                             placeholder={"Add new categories here..."}
                             value={categoriesAddedString}
-                            sx={{ minWidth: "275px", mb: 1 }}
+                            sx={{ minWidth: "275px" }}
                             onChange={(e) => onChangeCategory(e)}
                           />
                         </Fade>
