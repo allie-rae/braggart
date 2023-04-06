@@ -1,22 +1,24 @@
 import { Box, Chip, Fade, Stack, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { transitionTime } from "../constants";
 import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
 import { InteractiveEditIcon } from "../InteractiveEditIcon";
 import { formatTimestampDayMonthHourMinute } from "../utils/formatTimestamp";
 import AddIcon from "@mui/icons-material/Add";
+import { BragContext } from "../Contexts/BragContext";
 
-export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }) => {
+export const BragTimeline = () => {
+  const [brags, setBrags] = useContext(BragContext);
   const [isUserEditing, setIsUserEditing] = useState(null);
   const [isUserAddingCategory, setIsUserAddingCategory] = useState(false);
   const [categoriesAddedString, setCategoriesAddedString] = useState("");
   const [categoriesAddedList, setCategoriesAddedList] = useState([]);
 
   const onTurnOffEdit = (accomplishmentIndex) => {
-    const copyOfAccomplishments = [...listOfAccomplishments];
+    const copyOfAccomplishments = [...brags];
     copyOfAccomplishments[accomplishmentIndex].categories.push(...categoriesAddedList);
-    setListOfAccomplishments(copyOfAccomplishments);
+    setBrags(copyOfAccomplishments);
     setCategoriesAddedString("");
     setCategoriesAddedList([]);
     setIsUserAddingCategory(false);
@@ -47,7 +49,7 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
       }}
     >
       <Stack spacing={3}>
-        {listOfAccomplishments.map((accomplishment, i) => {
+        {brags.map((accomplishment, i) => {
           return (
             <Fade in timeout={transitionTime} key={`${i}-${accomplishment.title}`}>
               <Box
@@ -87,12 +89,12 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                             value={accomplishment.headline}
                             sx={{ minWidth: "275px", mb: 1, mt: 1 }}
                             onChange={(e) => {
-                              const copyOfAccomplishments = [...listOfAccomplishments];
+                              const copyOfAccomplishments = [...brags];
                               copyOfAccomplishments.splice(i, 1, {
                                 ...accomplishment,
                                 headline: e.target.value,
                               });
-                              setListOfAccomplishments(copyOfAccomplishments);
+                              setBrags(copyOfAccomplishments);
                             }}
                             onKeyDown={(e) => e.key === "Enter" && setIsUserEditing(false)}
                           />
@@ -107,11 +109,7 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                       />
                       <InteractiveDeleteIcon
                         onDelete={() => {
-                          setListOfAccomplishments(
-                            listOfAccomplishments.filter(
-                              (accomp) => accomp.id !== accomplishment.id
-                            )
-                          );
+                          setBrags(brags.filter((accomp) => accomp.id !== accomplishment.id));
                         }}
                       />
                     </Box>
@@ -131,12 +129,12 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                         multiline
                         sx={{ minWidth: "275px", mb: 1 }}
                         onChange={(e) => {
-                          const copyOfAccomplishments = [...listOfAccomplishments];
+                          const copyOfAccomplishments = [...brags];
                           copyOfAccomplishments.splice(i, 1, {
                             ...accomplishment,
                             body: e.target.value,
                           });
-                          setListOfAccomplishments(copyOfAccomplishments);
+                          setBrags(copyOfAccomplishments);
                         }}
                         onKeyDown={(e) => e.key === "Enter" && setIsUserEditing(false)}
                       />
@@ -160,14 +158,14 @@ export const BragTimeline = ({ listOfAccomplishments, setListOfAccomplishments }
                               variant="outlined"
                               sx={{ mr: 1 }}
                               onDelete={() => {
-                                const copyOfCategories = [...listOfAccomplishments[i].categories];
+                                const copyOfCategories = [...brags[i].categories];
                                 copyOfCategories.splice(catIndex, 1);
-                                const copyOfAccomplishments = [...listOfAccomplishments];
+                                const copyOfAccomplishments = [...brags];
                                 copyOfAccomplishments.splice(i, 1, {
                                   ...copyOfAccomplishments[i],
                                   categories: copyOfCategories,
                                 });
-                                setListOfAccomplishments(copyOfAccomplishments);
+                                setBrags(copyOfAccomplishments);
                               }}
                             />
                           </Fade>

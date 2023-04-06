@@ -1,10 +1,14 @@
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { Box, Button, Chip, TextField, Typography } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { BragContext } from "../Contexts/BragContext";
 
 const stepNameMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
 
-export const BragForm = ({ listOfAccomplishments, setListOfAccomplishments }) => {
+export const BragForm = () => {
+  const [brags, setBrags] = useContext(BragContext);
+  console.log("brags", brags);
+  console.log("setBrags", setBrags);
   const [newAccomplishmentHeadline, setNewAccomplishmentHeadline] = useState("");
   const [newAccomplishmentBodyText, setNewAccomplishmentBodyText] = useState("");
   const [newAccomplishmentCategoriesString, setNewAccomplishmentCategoriesString] = useState("");
@@ -79,7 +83,7 @@ export const BragForm = ({ listOfAccomplishments, setListOfAccomplishments }) =>
             }
           }
           if (step === 3) {
-            setListOfAccomplishments([
+            setBrags([
               {
                 headline: newAccomplishmentHeadline,
                 body: newAccomplishmentBodyText,
@@ -87,7 +91,7 @@ export const BragForm = ({ listOfAccomplishments, setListOfAccomplishments }) =>
                 timestamp: Date.now(),
                 id: Math.random() * 100000,
               },
-              ...listOfAccomplishments,
+              ...brags,
             ]);
             setNewAccomplishmentHeadline("");
             setNewAccomplishmentBodyText("");

@@ -1,5 +1,5 @@
 import { Typography, useTheme } from "@mui/material";
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 import {
   Bar as RechartsBar,
   BarChart,
@@ -11,15 +11,16 @@ import {
 } from "recharts";
 
 import { graphMargins, graphTitleStyles } from "../constants";
-import { dummyTimelineData } from "../Pages/BragPage";
+import { BragContext } from "../Contexts/BragContext";
 import { GraphWrapper } from "./index";
 
 export const Bar = ({ title }) => {
+  const [brags] = useContext(BragContext);
   const theme = useTheme();
 
   const categoryCounts = useMemo(
     () =>
-      dummyTimelineData.reduce((categoryCount, timelineDataPoint) => {
+      brags.reduce((categoryCount, timelineDataPoint) => {
         if (timelineDataPoint.categories.length) {
           timelineDataPoint.categories.map((cat) => {
             if (categoryCount[cat]) {
@@ -31,7 +32,7 @@ export const Bar = ({ title }) => {
         }
         return categoryCount;
       }, {}),
-    [dummyTimelineData]
+    [brags]
   );
 
   const graphData = Object.values(categoryCounts);
