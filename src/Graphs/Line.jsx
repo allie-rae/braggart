@@ -13,7 +13,7 @@ import { graphMargins, graphTitleStyles } from "../constants";
 import { formatTimestampDayMonth } from "../utils/formatTimestamp";
 import { GraphWrapper } from "./index";
 
-const data = [
+const pagesReadOverTime = [
   {
     date: formatTimestampDayMonth(1672552800000),
     Pages: 0,
@@ -56,7 +56,7 @@ export const Line = ({ title }) => {
         {title}
       </Typography>
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart width="100%" height="100%" data={data} margin={graphMargins}>
+        <LineChart width="100%" height="100%" data={pagesReadOverTime} margin={graphMargins}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" />
           <YAxis />

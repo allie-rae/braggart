@@ -24,16 +24,26 @@ export const themeOptions = {
       '"Segoe UI Symbol"',
     ].join(","),
     caption: {
-      fontSize: "0.8125rem",
+      fontSize: "1rem",
     },
     h6: {
-      fontSize: "1.1rem",
-      marginTop: "0.25rem",
-      marginBottom: "0.25rem",
+      fontSize: "1.2rem",
     },
     button: {
       textTransform: "none",
       fontSize: "1rem",
+    },
+  },
+  components: {
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontSize: "1rem",
+          borderRadius: "10px",
+          border: "2px solid",
+          borderColor: "#bdbdbd",
+        },
+      },
     },
   },
 };

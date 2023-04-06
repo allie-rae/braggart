@@ -61,7 +61,7 @@ export const BragForm = () => {
           />
           <Box sx={{ mr: 1, mb: 1 }}>
             {newAccomplishmentCategoriesList.map((cat, catIdx) => (
-              <Chip label={cat} key={`${catIdx}-${cat}`} size="small" />
+              <Chip label={cat} key={`${catIdx}-${cat}`} />
             ))}
           </Box>
         </>
