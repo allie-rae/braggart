@@ -100,7 +100,7 @@ const dummyTimelineData = [
 
 export const BragContextProvider = ({ children }) => {
   const bragTimelineData = localStorage.getItem("bragTimelineData");
-  const [brags, setBrags] = useState(bragTimelineData || []);
+  const [brags, setBrags] = useState(JSON.parse(bragTimelineData) || []);
 
   useEffect(() => {
     localStorage.setItem("bragTimelineData", JSON.stringify(brags));

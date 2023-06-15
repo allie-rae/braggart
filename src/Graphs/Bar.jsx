@@ -11,7 +11,7 @@ import {
 } from "recharts";
 
 import { graphMargins, graphTitleStyles } from "../constants";
-import { BragContext } from "../Contexts/BragContext";
+import { BragContext } from "../Contexts";
 import { GraphWrapper } from "./index";
 
 export const Bar = ({ title }) => {

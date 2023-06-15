@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import { Outlet } from "react-router-dom";
-import { BragContextProvider } from "./Contexts/BragContext";
+import { BragContextProvider } from "./Contexts";
 
 import { Navigation } from "./Navigation";
 

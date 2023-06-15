@@ -2,8 +2,13 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 import { Bar, Line } from "../Graphs";
+import { useContext } from "react";
+import { BragContext } from "../Contexts";
+import { Link } from "react-router-dom";
 
 export const Goals = () => {
+  const [brags] = useContext(BragContext);
+
   return (
     <Box sx={{ marginBottom: 3, maxWidth: "100%" }}>
       <Box
@@ -19,7 +24,26 @@ export const Goals = () => {
           Goal Visualization
         </Typography>
         <Bar title="Number of Accomplishments By Category" />
-        <Line title="Number of Pages Read" />
+        {/* gotta find a use for this line graph */}
+        {/* <Line title="Number of Pages Read" /> */}
+        {!brags.length && (
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "60vh",
+            }}
+          >
+            <Typography variant="h6" sx={{ mb: 1 }}>
+              You haven&apos;t bragged yet!
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 1 }}>
+              Use <Link to="/">this form</Link> to become a braggart.
+            </Typography>
+          </Box>
+        )}
       </Box>
     </Box>
   );

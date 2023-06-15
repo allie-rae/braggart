@@ -18,7 +18,7 @@ export const PageNotFound = () => {
       <ErrorIcon fontSize="large" sx={{ color: theme.palette.primary.main }} />
       <Typography variant="h6">Page not found</Typography>
       <Typography variant="body1">
-        <Link to="/timeline">Head back to your timeline</Link>
+        <Link to="/">Head back to your timeline</Link>
       </Typography>
     </Box>
   );

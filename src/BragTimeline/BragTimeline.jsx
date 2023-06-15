@@ -6,7 +6,7 @@ import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
 import { InteractiveEditIcon } from "../InteractiveEditIcon";
 import { formatTimestampDayMonthHourMinute } from "../utils/formatTimestamp";
 import AddIcon from "@mui/icons-material/Add";
-import { BragContext } from "../Contexts/BragContext";
+import { BragContext } from "../Contexts";
 
 export const BragTimeline = () => {
   const [brags, setBrags] = useContext(BragContext);
@@ -37,6 +37,9 @@ export const BragTimeline = () => {
     }
     return false;
   };
+
+  console.log("brags", brags);
+  console.log("brags.length", brags.length);
 
   if (!brags.length) {
     return (

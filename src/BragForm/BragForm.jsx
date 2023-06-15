@@ -1,7 +1,7 @@
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { Box, Button, Chip, TextField, Typography } from "@mui/material";
 import { useContext, useState } from "react";
-import { BragContext } from "../Contexts/BragContext";
+import { BragContext } from "../Contexts";
 
 const stepNameMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
 

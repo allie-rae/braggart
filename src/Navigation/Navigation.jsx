@@ -1,4 +1,3 @@
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import ViewTimelineIcon from "@mui/icons-material/ViewTimeline";
 import AppBar from "@mui/material/AppBar";
@@ -41,15 +40,6 @@ export const Navigation = () => {
                 onClick={() => navigate("goals")}
               >
                 <AutoGraphIcon />
-              </IconButton>
-              <IconButton
-                color="inherit"
-                size="large"
-                edge="end"
-                aria-label="account"
-                onClick={() => navigate("account")}
-              >
-                <AccountBoxIcon />
               </IconButton>
             </Box>
           )}
