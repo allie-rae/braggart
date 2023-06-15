@@ -37,7 +37,7 @@ export const Goals = () => {
             }}
           >
             <Typography variant="h6" sx={{ mb: 1 }}>
-              You haven&apos;t bragged yet!
+              Nothing to brag about yet!
             </Typography>
             <Typography variant="body1" sx={{ mb: 1 }}>
               Use <Link to="/">this form</Link> to become a braggart.
