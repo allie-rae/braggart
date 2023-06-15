@@ -1,7 +1,9 @@
-import React, { createContext } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 export const BragContext = createContext();
 
+// keeping this for dev purposes
+// eslint-disable-next-line
 const dummyTimelineData = [
   {
     headline: "Read Clean Code by Robert C Martin",
@@ -82,7 +84,7 @@ const dummyTimelineData = [
   },
   {
     headline: "Met with design to clarify objectives",
-    body: "We exchanged ideas, including potential improvements to the portal, what's next priority-wise, who the work could be given to, and next steps.",
+    body: "We exchanged ideas, including potential improvements, what's next priority-wise, who the work could be given to, and next steps.",
     categories: ["Meetings", "Teamwork"],
     timestamp: 1674066764000,
     id: 2,
@@ -97,7 +99,12 @@ const dummyTimelineData = [
 ];
 
 export const BragContextProvider = ({ children }) => {
-  const [brags, setBrags] = React.useState(dummyTimelineData);
+  const bragTimelineData = localStorage.getItem("bragTimelineData");
+  const [brags, setBrags] = useState(bragTimelineData || []);
+
+  useEffect(() => {
+    localStorage.setItem("bragTimelineData", JSON.stringify(brags));
+  }, [brags]);
 
   return <BragContext.Provider value={[brags, setBrags]}>{children}</BragContext.Provider>;
 };

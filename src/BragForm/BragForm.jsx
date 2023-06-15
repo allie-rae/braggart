@@ -7,8 +7,6 @@ const stepNameMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
 
 export const BragForm = () => {
   const [brags, setBrags] = useContext(BragContext);
-  console.log("brags", brags);
-  console.log("setBrags", setBrags);
   const [newAccomplishmentHeadline, setNewAccomplishmentHeadline] = useState("");
   const [newAccomplishmentBodyText, setNewAccomplishmentBodyText] = useState("");
   const [newAccomplishmentCategoriesString, setNewAccomplishmentCategoriesString] = useState("");

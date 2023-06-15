@@ -1,4 +1,4 @@
-import { Box, Chip, Fade, Stack, TextField, Typography } from "@mui/material";
+import { Box, Chip, Fade, TextField, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
 
 import { transitionTime } from "../constants";
@@ -37,6 +37,27 @@ export const BragTimeline = () => {
     }
     return false;
   };
+
+  if (!brags.length) {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "60vh",
+        }}
+      >
+        <Typography variant="h6" sx={{ mb: 1 }}>
+          You haven&apos;t bragged yet!
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 1 }}>
+          Use the form above to become a braggart.
+        </Typography>
+      </Box>
+    );
+  }
 
   return (
     <Box
