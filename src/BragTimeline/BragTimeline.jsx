@@ -38,9 +38,6 @@ export const BragTimeline = () => {
     return false;
   };
 
-  console.log("brags", brags);
-  console.log("brags.length", brags.length);
-
   if (!brags.length) {
     return (
       <Box

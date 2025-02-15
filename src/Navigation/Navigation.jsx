@@ -3,7 +3,6 @@ import ViewTimelineIcon from "@mui/icons-material/ViewTimeline";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
@@ -23,24 +22,26 @@ export const Navigation = () => {
           {!isUserLoggedIn && <Button color="inherit">Login</Button>}
           {isUserLoggedIn && (
             <Box>
-              <IconButton
+              <Button
                 color="inherit"
                 size="large"
                 edge="end"
                 aria-label="account"
                 onClick={() => navigate("/")}
+                startIcon={<ViewTimelineIcon />}
               >
-                <ViewTimelineIcon />
-              </IconButton>
-              <IconButton
+                Feed
+              </Button>
+              <Button
                 color="inherit"
                 size="large"
                 edge="end"
                 aria-label="account"
                 onClick={() => navigate("goals")}
+                startIcon={<AutoGraphIcon />}
               >
-                <AutoGraphIcon />
-              </IconButton>
+                Visualization
+              </Button>
             </Box>
           )}
         </Toolbar>
