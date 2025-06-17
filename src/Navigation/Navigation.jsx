@@ -9,7 +9,6 @@ import * as React from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Navigation = () => {
-  const isUserLoggedIn = true;
   const navigate = useNavigate();
 
   return (
@@ -19,31 +18,28 @@ export const Navigation = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             braggart
           </Typography>
-          {!isUserLoggedIn && <Button color="inherit">Login</Button>}
-          {isUserLoggedIn && (
-            <Box>
-              <Button
-                color="inherit"
-                size="large"
-                edge="end"
-                aria-label="account"
-                onClick={() => navigate("/")}
-                startIcon={<ViewTimelineIcon />}
-              >
-                Brags
-              </Button>
-              <Button
-                color="inherit"
-                size="large"
-                edge="end"
-                aria-label="account"
-                onClick={() => navigate("goals")}
-                startIcon={<AutoGraphIcon />}
-              >
-                Visualization
-              </Button>
-            </Box>
-          )}
+          <Box>
+            <Button
+              color="inherit"
+              size="large"
+              edge="end"
+              aria-label="account"
+              onClick={() => navigate("/")}
+              startIcon={<ViewTimelineIcon />}
+            >
+              Brags
+            </Button>
+            <Button
+              color="inherit"
+              size="large"
+              edge="end"
+              aria-label="account"
+              onClick={() => navigate("goals")}
+              startIcon={<AutoGraphIcon />}
+            >
+              Visualization
+            </Button>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
