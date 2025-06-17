@@ -7,7 +7,7 @@ const stepNameMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
 
 export const BragForm = () => {
   const [brags, setBrags] = useContext(BragContext);
-  const [newAccomplishmentHeadline, setNewAccomplishmentHeadline] = useState("");
+  const [headline, setHeadline] = useState("");
   const [newAccomplishmentBodyText, setNewAccomplishmentBodyText] = useState("");
   const [newAccomplishmentCategoriesString, setNewAccomplishmentCategoriesString] = useState("");
   const [newAccomplishmentCategoriesList, setNewAccomplishmentCategoriesList] = useState([]);
@@ -27,9 +27,9 @@ export const BragForm = () => {
           label="Type accomplishment here..."
           variant="outlined"
           placeholder="Type accomplishment here..."
-          value={newAccomplishmentHeadline}
+          value={headline}
           sx={{ minWidth: "275px", maxWidth: "275px", mb: 1 }}
-          onChange={(e) => setNewAccomplishmentHeadline(e.target.value)}
+          onChange={(e) => setHeadline(e.target.value)}
         />
       )}
       {step === 2 && (
@@ -71,7 +71,7 @@ export const BragForm = () => {
         startIcon={<AddCircleOutlineIcon />}
         onClick={() => {
           if (step === 1) {
-            if (newAccomplishmentHeadline.trim().length) {
+            if (headline.trim().length) {
               setStep(2);
             }
           }
@@ -83,7 +83,7 @@ export const BragForm = () => {
           if (step === 3) {
             setBrags([
               {
-                headline: newAccomplishmentHeadline,
+                headline: headline,
                 body: newAccomplishmentBodyText,
                 categories: newAccomplishmentCategoriesList,
                 timestamp: Date.now(),
@@ -91,7 +91,7 @@ export const BragForm = () => {
               },
               ...brags,
             ]);
-            setNewAccomplishmentHeadline("");
+            setHeadline("");
             setNewAccomplishmentBodyText("");
             setNewAccomplishmentCategoriesString("");
             setNewAccomplishmentCategoriesList([]);
