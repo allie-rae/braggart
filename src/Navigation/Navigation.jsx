@@ -30,7 +30,7 @@ export const Navigation = () => {
                 onClick={() => navigate("/")}
                 startIcon={<ViewTimelineIcon />}
               >
-                Feed
+                Brags
               </Button>
               <Button
                 color="inherit"
