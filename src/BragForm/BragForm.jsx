@@ -8,9 +8,9 @@ const stepNameMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
 export const BragForm = () => {
   const [brags, setBrags] = useContext(BragContext);
   const [headline, setHeadline] = useState("");
-  const [newAccomplishmentBodyText, setNewAccomplishmentBodyText] = useState("");
-  const [newAccomplishmentCategoriesString, setNewAccomplishmentCategoriesString] = useState("");
-  const [newAccomplishmentCategoriesList, setNewAccomplishmentCategoriesList] = useState([]);
+  const [accomplishment, setAccomplishment] = useState("");
+  const [accomplishmentCategoriesString, setAccomplishmentCategoriesString] = useState("");
+  const [accomplishmentCategoriesList, setAccomplishmentCategoriesList] = useState([]);
   const [step, setStep] = useState(1);
   return (
     <Box
@@ -37,10 +37,10 @@ export const BragForm = () => {
           label="Time to brag..."
           variant="outlined"
           placeholder="Time to brag..."
-          value={newAccomplishmentBodyText}
+          value={accomplishment}
           multiline
           sx={{ minWidth: "275px", maxWidth: "275px", mb: 1 }}
-          onChange={(e) => setNewAccomplishmentBodyText(e.target.value)}
+          onChange={(e) => setAccomplishment(e.target.value)}
         />
       )}
       {step === 3 && (
@@ -49,16 +49,16 @@ export const BragForm = () => {
             label="Categorize..."
             variant="outlined"
             placeholder="Meetings, upskilling, productivity"
-            value={newAccomplishmentCategoriesString}
+            value={accomplishmentCategoriesString}
             sx={{ minWidth: "275px", maxWidth: "275px", mb: 1 }}
             onChange={(e) => {
               const categories = e.target.value.trim().split(/[ ,]+/).filter(Boolean);
-              setNewAccomplishmentCategoriesString(e.target.value);
-              setNewAccomplishmentCategoriesList(categories);
+              setAccomplishmentCategoriesString(e.target.value);
+              setAccomplishmentCategoriesList(categories);
             }}
           />
           <Box sx={{ mr: 1, mb: 1 }}>
-            {newAccomplishmentCategoriesList.map((cat, catIdx) => (
+            {accomplishmentCategoriesList.map((cat, catIdx) => (
               <Chip label={cat} key={`${catIdx}-${cat}`} />
             ))}
           </Box>
@@ -76,7 +76,7 @@ export const BragForm = () => {
             }
           }
           if (step === 2) {
-            if (newAccomplishmentBodyText.trim().length) {
+            if (accomplishment.trim().length) {
               setStep(3);
             }
           }
@@ -84,17 +84,17 @@ export const BragForm = () => {
             setBrags([
               {
                 headline: headline,
-                body: newAccomplishmentBodyText,
-                categories: newAccomplishmentCategoriesList,
+                body: accomplishment,
+                categories: accomplishmentCategoriesList,
                 timestamp: Date.now(),
                 id: Math.random() * 100000,
               },
               ...brags,
             ]);
             setHeadline("");
-            setNewAccomplishmentBodyText("");
-            setNewAccomplishmentCategoriesString("");
-            setNewAccomplishmentCategoriesList([]);
+            setAccomplishment("");
+            setAccomplishmentCategoriesString("");
+            setAccomplishmentCategoriesList([]);
             setStep(1);
           }
         }}
