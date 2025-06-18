@@ -1,6 +1,6 @@
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Fade, Typography, useTheme } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { transitionTime } from "../constants";
 

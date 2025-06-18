@@ -1,5 +1,4 @@
 import { act, fireEvent, render } from "@testing-library/react";
-import React from "react";
 
 import { InteractiveDeleteIcon } from "./InteractiveDeleteIcon";
 

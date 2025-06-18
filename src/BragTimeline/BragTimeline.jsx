@@ -1,5 +1,5 @@
 import { Box, Chip, Fade, TextField, Typography } from "@mui/material";
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 
 import { transitionTime } from "../constants";
 import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
