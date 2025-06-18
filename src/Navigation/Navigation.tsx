@@ -22,7 +22,6 @@ export const Navigation = () => {
             <Button
               color="inherit"
               size="large"
-              edge="end"
               aria-label="account"
               onClick={() => navigate("/")}
               startIcon={<ViewTimelineIcon />}
@@ -32,7 +31,6 @@ export const Navigation = () => {
             <Button
               color="inherit"
               size="large"
-              edge="end"
               aria-label="account"
               onClick={() => navigate("goals")}
               startIcon={<AutoGraphIcon />}
