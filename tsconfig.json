@@ -14,7 +14,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "pretty": true
+    "pretty": true,
+    "allowImportingTsExtensions": true
   },
   "include": ["src/**/*", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "build", "dist", "coverage", "public"]

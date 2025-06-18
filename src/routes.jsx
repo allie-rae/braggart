@@ -1,4 +1,4 @@
-import App from "./App";
+import App from "./App.tsx";
 import { BragPage, Goals, PageNotFound } from "./Pages";
 import { Demo } from "./Pages/Demo";
 
