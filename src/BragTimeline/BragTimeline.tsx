@@ -69,7 +69,7 @@ export const BragTimeline = () => {
     >
       {brags.map((accomplishment, i: number) => {
         return (
-          <Fade in timeout={transitionTime} key={`${i}-${accomplishment.title}`}>
+          <Fade in timeout={transitionTime} key={`${i}-${accomplishment.id}`}>
             <Box
               sx={{
                 border: "6px solid",
