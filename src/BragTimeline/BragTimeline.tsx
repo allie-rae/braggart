@@ -1,5 +1,5 @@
 import { Box, Chip, Fade, TextField, Typography } from "@mui/material";
-import { useContext, useState } from "react";
+import { ChangeEvent, useContext, useState } from "react";
 
 import { transitionTime } from "../constants";
 import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
@@ -10,12 +10,12 @@ import { BragContext } from "../Contexts";
 
 export const BragTimeline = () => {
   const [brags, setBrags] = useContext(BragContext);
-  const [isUserEditing, setIsUserEditing] = useState(null);
+  const [isUserEditing, setIsUserEditing] = useState<boolean | null | number>(null);
   const [isUserAddingCategory, setIsUserAddingCategory] = useState(false);
   const [categoriesAddedString, setCategoriesAddedString] = useState("");
-  const [categoriesAddedList, setCategoriesAddedList] = useState([]);
+  const [categoriesAddedList, setCategoriesAddedList] = useState<string[] | []>([]);
 
-  const onTurnOffEdit = (accomplishmentIndex) => {
+  const onTurnOffEdit = (accomplishmentIndex: number) => {
     const copyOfAccomplishments = [...brags];
     copyOfAccomplishments[accomplishmentIndex].categories.push(...categoriesAddedList);
     setBrags(copyOfAccomplishments);
@@ -25,13 +25,13 @@ export const BragTimeline = () => {
     setIsUserEditing(null);
   };
 
-  const onChangeCategory = (e) => {
+  const onChangeCategory = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const categories = e.target.value.trim().split(/[ ,]+/).filter(Boolean);
     setCategoriesAddedString(e.target.value);
     setCategoriesAddedList(categories);
   };
 
-  const isUserEditingThisAccomplishment = (accomplishmentId) => {
+  const isUserEditingThisAccomplishment = (accomplishmentId: number) => {
     if (isUserEditing === accomplishmentId) {
       return true;
     }
@@ -66,7 +66,7 @@ export const BragTimeline = () => {
         maxWidth: "700px",
       }}
     >
-      {brags.map((accomplishment, i) => {
+      {brags.map((accomplishment, i: number) => {
         return (
           <Fade in timeout={transitionTime} key={`${i}-${accomplishment.title}`}>
             <Box
