@@ -4,7 +4,11 @@ import { useEffect, useState } from "react";
 
 import { transitionTime } from "../constants";
 
-export const InteractiveDeleteIcon = ({ onDelete }) => {
+interface InteractiveDeleteIconProps {
+  onDelete: () => void;
+}
+
+export const InteractiveDeleteIcon = ({ onDelete }: InteractiveDeleteIconProps) => {
   const theme = useTheme();
   const [isUserConfirmingDelete, setIsUserConfirmingDelete] = useState(false);
 
