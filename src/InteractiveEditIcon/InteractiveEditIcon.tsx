@@ -4,7 +4,17 @@ import { Fade, useTheme } from "@mui/material";
 
 import { transitionTime } from "../constants";
 
-export const InteractiveEditIcon = ({ isEditTriggered, turnOnEdit, turnOffEdit }) => {
+interface InteractiveEditIconProps {
+  isEditTriggered: boolean;
+  turnOnEdit: () => void;
+  turnOffEdit: () => void;
+}
+
+export const InteractiveEditIcon = ({
+  isEditTriggered,
+  turnOnEdit,
+  turnOffEdit,
+}: InteractiveEditIconProps) => {
   const theme = useTheme();
   return (
     <>
