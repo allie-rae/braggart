@@ -1,1 +1,0 @@
-export { InteractiveDeleteIcon } from "./InteractiveDeleteIcon";

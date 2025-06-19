@@ -47,7 +47,7 @@ export const Bar = ({ title }) => {
         {title}
       </Typography>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart width="100%" height="100%" data={graphData} margin={graphMargins}>
+        <BarChart width={100} height={100} data={graphData} margin={graphMargins}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="category" />
           <YAxis />

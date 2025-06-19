@@ -56,7 +56,7 @@ export const Line = ({ title }) => {
         {title}
       </Typography>
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart width="100%" height="100%" data={pagesReadOverTime} margin={graphMargins}>
+        <LineChart width={100} height={100} data={pagesReadOverTime} margin={graphMargins}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" />
           <YAxis />
