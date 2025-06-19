@@ -10,6 +10,7 @@ import { BragContext } from "../Contexts";
 
 export const BragTimeline = () => {
   const [brags, setBrags] = useContext(BragContext);
+  console.log("bragContext", BragContext);
   const [isUserEditing, setIsUserEditing] = useState<boolean | null | number>(null);
   const [isUserAddingCategory, setIsUserAddingCategory] = useState(false);
   const [categoriesAddedString, setCategoriesAddedString] = useState("");

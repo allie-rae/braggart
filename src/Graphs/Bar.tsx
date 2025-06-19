@@ -14,7 +14,7 @@ import { graphMargins, graphTitleStyles } from "../constants";
 import { BragContext } from "../Contexts";
 import { GraphWrapper } from "./index";
 
-export const Bar = ({ title }) => {
+export const Bar = ({ title }: { title: string }) => {
   const [brags] = useContext(BragContext);
   const theme = useTheme();
 

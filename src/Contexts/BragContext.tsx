@@ -1,6 +1,16 @@
 import { createContext, useEffect, useState } from "react";
 
-export const BragContext = createContext([]);
+export interface Brag {
+  headline: string;
+  body: string;
+  categories: string[];
+  timestamp: number;
+  id: number;
+}
+
+type BragContextType = [Brag[], (brags: Brag[]) => void];
+
+export const BragContext = createContext<BragContextType>([[], () => {}]);
 
 // keeping this for dev purposes
 // eslint-disable-next-line
@@ -100,7 +110,7 @@ const dummyTimelineData = [
 
 export const BragContextProvider = ({ children }: { children: React.ReactNode }) => {
   const bragTimelineData = localStorage.getItem("bragTimelineData") || "";
-  const [brags, setBrags] = useState(JSON.parse(bragTimelineData) || []);
+  const [brags, setBrags] = useState<Brag[]>(JSON.parse(bragTimelineData) || []);
 
   useEffect(() => {
     localStorage.setItem("bragTimelineData", JSON.stringify(brags));
