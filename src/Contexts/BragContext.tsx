@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-export const BragContext = createContext();
+export const BragContext = createContext([]);
 
 // keeping this for dev purposes
 // eslint-disable-next-line
@@ -98,8 +98,8 @@ const dummyTimelineData = [
   },
 ];
 
-export const BragContextProvider = ({ children }) => {
-  const bragTimelineData = localStorage.getItem("bragTimelineData");
+export const BragContextProvider = ({ children }: { children: React.ReactNode }) => {
+  const bragTimelineData = localStorage.getItem("bragTimelineData") || "";
   const [brags, setBrags] = useState(JSON.parse(bragTimelineData) || []);
 
   useEffect(() => {

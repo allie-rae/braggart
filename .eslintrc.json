@@ -17,27 +17,3 @@
     "no-unused-vars": "warn"
   }
 }
-
-// "eslintConfig": {
-//     "root": true,
-//     "parser": "@babel/eslint-parser",
-//     "plugins": [
-//       "simple-import-sort"
-//     ],
-//     "extends": [
-//       "eslint:recommended"
-//     ],
-//     "parserOptions": {
-//       "ecmaFeatures": {
-//         "jsx": true
-//       }
-//     },
-//     "env": {
-//       "es6": true
-//     },
-//     "rules": {
-//       "react/jsx-uses-vars": "off",
-//       "func-style": "off",
-//       "no-extra-boolean-cast": 0,
-//     }
-//   },

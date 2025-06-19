@@ -1,8 +1,8 @@
+import { ThemeOptions } from "@mui/material";
 import "./index.css";
 
-export const themeOptions = {
+export const themeOptions: ThemeOptions = {
   palette: {
-    type: "light",
     primary: {
       main: "#5200CC",
       contrastText: "#FFF",

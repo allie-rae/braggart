@@ -3,14 +3,18 @@ import { Box, Button, Chip, TextField, Typography } from "@mui/material";
 import { useContext, useState } from "react";
 import { BragContext } from "../Contexts";
 
-const stepNameMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
+interface stepMap {
+  [key: number]: string;
+}
+
+const stepNameMap: stepMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
 
 export const BragForm = () => {
   const [brags, setBrags] = useContext(BragContext);
   const [headline, setHeadline] = useState("");
   const [accomplishment, setAccomplishment] = useState("");
   const [accomplishmentCategoriesString, setAccomplishmentCategoriesString] = useState("");
-  const [accomplishmentCategoriesList, setAccomplishmentCategoriesList] = useState([]);
+  const [accomplishmentCategoriesList, setAccomplishmentCategoriesList] = useState<string[]>([]);
   const [step, setStep] = useState(1);
   return (
     <Box

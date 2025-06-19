@@ -1,6 +1,6 @@
 import App from "./App.tsx";
-import { BragPage, Goals, PageNotFound } from "./Pages";
-import { Demo } from "./Pages/Demo";
+import { BragPage, Goals, PageNotFound } from "./Pages/index.ts";
+import { Demo } from "./Pages/Demo.tsx";
 
 export const routes = [
   {

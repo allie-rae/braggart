@@ -46,14 +46,16 @@ export const Demo = () => {
           <Stack spacing={1} direction="row">
             <FormGroup>
               <FormControlLabel
-                onChange={(e) => onInsertOrDeleteQueryParam("books", e.target.checked, setBooks)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  onInsertOrDeleteQueryParam("books", e.target.checked, setBooks)
+                }
                 key="books"
                 control={<Checkbox />}
                 label="Books (5)"
                 checked={books}
               />
               <FormControlLabel
-                onChange={(e) =>
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   onInsertOrDeleteQueryParam("meetings", e.target.checked, setMeetings)
                 }
                 key="meetings"
@@ -62,7 +64,7 @@ export const Demo = () => {
                 checked={meetings}
               />
               <FormControlLabel
-                onChange={(e) =>
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   onInsertOrDeleteQueryParam("courses", e.target.checked, setCourses)
                 }
                 key="courses"
