@@ -3,11 +3,7 @@ import { Box, Button, Chip, TextField, Typography } from "@mui/material";
 import { useContext, useState } from "react";
 import { BragContext } from "../Contexts";
 
-interface stepMap {
-  [key: number]: string;
-}
-
-const stepNameMap: stepMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
+const stepNameMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
 
 export const BragForm = () => {
   const [brags, setBrags] = useContext(BragContext);
