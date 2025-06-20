@@ -13,6 +13,10 @@ import { graphMargins, graphTitleStyles } from "../constants";
 import { formatTimestampDayMonth } from "../utils/formatTimestamp";
 import { GraphWrapper } from "./index";
 
+interface LineProps {
+  title: string;
+}
+
 const pagesReadOverTime = [
   {
     date: formatTimestampDayMonth(1672552800000),
@@ -48,7 +52,7 @@ const pagesReadOverTime = [
   },
 ];
 
-export const Line = ({ title }) => {
+export const Line = ({ title }: LineProps) => {
   const theme = useTheme();
   return (
     <GraphWrapper fadeInCondition={true}>
