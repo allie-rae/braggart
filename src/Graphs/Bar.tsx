@@ -20,18 +20,21 @@ export const Bar = ({ title }: { title: string }) => {
 
   const categoryCounts = useMemo(
     () =>
-      brags.reduce((categoryCount, timelineDataPoint) => {
-        if (timelineDataPoint.categories.length) {
-          timelineDataPoint.categories.map((cat) => {
-            if (categoryCount[cat]) {
-              categoryCount[cat] = { ...categoryCount[cat], Count: categoryCount[cat].Count + 1 };
-            } else {
-              categoryCount[cat] = { category: cat, Count: 1 };
-            }
-          });
-        }
-        return categoryCount;
-      }, {}),
+      brags.reduce(
+        (categoryCount: Record<string, { category: string; count: number }>, timelineDataPoint) => {
+          if (timelineDataPoint.categories.length) {
+            timelineDataPoint.categories.map((cat) => {
+              if (categoryCount[cat]) {
+                categoryCount[cat] = { ...categoryCount[cat], count: categoryCount[cat].count + 1 };
+              } else {
+                categoryCount[cat] = { category: cat, count: 1 };
+              }
+            });
+          }
+          return categoryCount;
+        },
+        {}
+      ),
     [brags]
   );
 
