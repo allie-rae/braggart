@@ -3,7 +3,12 @@ import { Box } from "@mui/system";
 
 import { transitionTime } from "../constants";
 
-export const GraphWrapper = ({ fadeInCondition, children }) => {
+interface GraphWrapperProps {
+  fadeInCondition: boolean;
+  children: React.ReactNode;
+}
+
+export const GraphWrapper = ({ fadeInCondition, children }: GraphWrapperProps) => {
   return (
     <Fade in={fadeInCondition} timeout={{ enter: transitionTime }}>
       <Box
