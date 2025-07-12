@@ -39,7 +39,7 @@ export const Bar = ({ title }: { title: string }) => {
   );
 
   const graphData = Object.values(categoryCounts);
-  console.log("graphData", graphData);
+
   if (!graphData.length) {
     return null;
   }
