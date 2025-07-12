@@ -18,27 +18,25 @@ export const Bar = ({ title }: { title: string }) => {
   const [brags] = useContext(BragContext);
   const theme = useTheme();
 
-  const categoryCounts = useMemo(
-    () =>
-      brags.reduce(
-        (categoryCount: Record<string, { category: string; count: number }>, timelineDataPoint) => {
-          if (timelineDataPoint.categories.length) {
-            timelineDataPoint.categories.map((cat) => {
-              if (categoryCount[cat]) {
-                categoryCount[cat].count = ++categoryCount[cat].count;
-              } else {
-                categoryCount[cat] = { category: cat, count: 1 };
-              }
-            });
-          }
-          return categoryCount;
-        },
-        {}
-      ),
-    [brags]
-  );
+  const graphData = useMemo(() => {
+    const categoryCounts = brags.reduce(
+      (categoryCount: Record<string, { category: string; count: number }>, timelineDataPoint) => {
+        if (timelineDataPoint.categories.length) {
+          timelineDataPoint.categories.map((cat) => {
+            if (categoryCount[cat]) {
+              categoryCount[cat].count = ++categoryCount[cat].count;
+            } else {
+              categoryCount[cat] = { category: cat, count: 1 };
+            }
+          });
+        }
+        return categoryCount;
+      },
+      {}
+    );
 
-  const graphData = Object.values(categoryCounts);
+    return Object.values(categoryCounts);
+  }, [brags]);
 
   if (!graphData.length) {
     return null;
