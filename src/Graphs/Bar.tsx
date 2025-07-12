@@ -25,7 +25,7 @@ export const Bar = ({ title }: { title: string }) => {
           if (timelineDataPoint.categories.length) {
             timelineDataPoint.categories.map((cat) => {
               if (categoryCount[cat]) {
-                categoryCount[cat] = { ...categoryCount[cat], count: categoryCount[cat].count + 1 };
+                categoryCount[cat].count = ++categoryCount[cat].count;
               } else {
                 categoryCount[cat] = { category: cat, count: 1 };
               }
@@ -39,7 +39,7 @@ export const Bar = ({ title }: { title: string }) => {
   );
 
   const graphData = Object.values(categoryCounts);
-
+  console.log("graphData", graphData);
   if (!graphData.length) {
     return null;
   }
@@ -55,7 +55,7 @@ export const Bar = ({ title }: { title: string }) => {
           <XAxis dataKey="category" />
           <YAxis />
           <Tooltip />
-          <RechartsBar dataKey="Count" fill={theme.palette.primary.main} />
+          <RechartsBar dataKey="count" fill={theme.palette.primary.main} />
         </BarChart>
       </ResponsiveContainer>
     </GraphWrapper>
