@@ -18,7 +18,7 @@ export const Navigation = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             braggart
           </Typography>
-          {/* <Search /> */}
+          <Search />
           <Box>
             <Button
               color="inherit"
