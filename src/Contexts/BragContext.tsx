@@ -12,12 +12,12 @@ type BragContextType = [Brag[], (brags: Brag[]) => void];
 
 export const BragContext = createContext<BragContextType>([[], () => {}]);
 
-// this will allow users who do not want to interact with the app see the timeline
+// this will allow potential employers who do not want to interact with the app see the timeline
 const dummyTimelineData = [
   {
     headline: "Completed dependecy extraction",
     body: `The team decided to use its own implementation instead of depending on an external library. Today, I completed the extraction of the old library.`,
-    categories: ["Productivity"],
+    categories: ["Productivity", "Teamwork", "Code"],
     timestamp: 1674190188554,
     id: 3,
   },
@@ -31,7 +31,7 @@ const dummyTimelineData = [
   {
     headline: "Read Clean Code by Robert C Martin",
     body: "Some lessons learned: 1. It is unprofessional to write messy code 2. Always leave code cleaner than you found it 3. Write variable names that reveal intention (like 'accounts' instead of 'list') 4. Clarity is king.",
-    categories: ["Upskilling"],
+    categories: ["Upskilling", "Code"],
     timestamp: 1673977064000,
     id: 1,
   },
