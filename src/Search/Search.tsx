@@ -41,7 +41,12 @@ export const Search = () => {
       variant="filled"
       label="Search"
       size="small"
-      style={{ backgroundColor: "white", borderRadius: "2px", marginRight: "10px" }}
+      style={{
+        backgroundColor: "white",
+        borderRadius: "2px",
+        marginLeft: "10px",
+        marginRight: "10px",
+      }}
       onChange={onChange}
       value={searchText}
     />
