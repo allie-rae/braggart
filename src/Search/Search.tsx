@@ -16,18 +16,18 @@ export const Search = () => {
       setBrags(bragsCopy);
     } else {
       const filteredBrags: Brag[] = [];
-      for (let i in brags) {
+      for (let i in bragsCopy) {
         const input = searchText.toLowerCase();
         if (
-          brags[i].body.toLowerCase().includes(input) ||
-          brags[i].headline.toLowerCase().includes(input)
+          bragsCopy[i].body.toLowerCase().includes(input) ||
+          bragsCopy[i].headline.toLowerCase().includes(input)
         ) {
-          filteredBrags.push(brags[i]);
+          filteredBrags.push(bragsCopy[i]);
           continue;
         }
-        for (let j in brags[i].categories) {
-          if (brags[i].categories[j].toLowerCase().includes(input)) {
-            filteredBrags.push(brags[i]);
+        for (let j in bragsCopy[i].categories) {
+          if (bragsCopy[i].categories[j].toLowerCase().includes(input)) {
+            filteredBrags.push(bragsCopy[i]);
             continue;
           }
         }
