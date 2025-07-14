@@ -50,10 +50,10 @@ export const BragTimeline = () => {
         }}
       >
         <Typography variant="h6" sx={{ mb: 1 }}>
-          You haven&apos;t bragged yet!
+          No brags found!
         </Typography>
         <Typography variant="body1" sx={{ mb: 1 }}>
-          Use the form above to become a braggart.
+          Brag your heart out using the form above.
         </Typography>
       </Box>
     );
