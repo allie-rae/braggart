@@ -6,12 +6,12 @@ A timeline you can share that showcases your accomplishments. Can be used for 1:
 
 I'm adding to this app a little at a time. Progress on the frontend so far:
 
-- Add accomplishments (text) to the timeline
-- Edit / Delete accomplishments
-- Mobile-friendly
-- Colorblind-friendly
-- Routing
-- Added basic graphs
-- Categories for accomplishments
-- One graph connects to categories
-- Uses localStorage
+- User can now add accomplishments to the timeline
+- User can now edit / delete accomplishments
+- App is now mobile-friendly
+- App is now colorblind-friendly
+- App now has routing
+- Added bar graph
+- Added categories on brags
+- App now uses localStorage for accomplishments
+- App now has a search feature that searches through headlines, body text, and categories (Jul 13 2025)
