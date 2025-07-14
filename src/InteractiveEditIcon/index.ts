@@ -1,1 +1,1 @@
-export { InteractiveEditIcon } from "./InteractiveEditIcon.tsx";
+export { InteractiveEditIcon } from "./InteractiveEditIcon";

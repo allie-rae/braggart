@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2017",
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -15,7 +15,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "pretty": true,
-    "allowImportingTsExtensions": true
+    "types": ["jest"]
   },
   "include": ["src/**/*", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "build", "dist", "coverage", "public"]

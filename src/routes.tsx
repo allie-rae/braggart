@@ -1,5 +1,5 @@
-import App from "./App.tsx";
-import { BragPage, Goals, PageNotFound } from "./Pages/index.ts";
+import App from "./App";
+import { BragPage, Goals, PageNotFound } from "./Pages/index";
 
 export const routes = [
   {

@@ -1,1 +1,1 @@
-export { formatTimestampDayMonth, formatTimestampDayMonthHourMinute } from "./formatTimestamp.ts";
+export { formatTimestampDayMonth, formatTimestampDayMonthHourMinute } from "./formatTimestamp";

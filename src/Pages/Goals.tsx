@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
-import { Bar, Line } from "../Graphs";
+import { Bar } from "../Graphs";
 import { useContext } from "react";
 import { BragContext } from "../Contexts";
 import { Link } from "react-router-dom";

@@ -1,1 +1,1 @@
-export { BragForm } from "./BragForm.tsx";
+export { BragForm } from "./BragForm";

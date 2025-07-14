@@ -1,1 +1,1 @@
-export { InteractiveDeleteIcon } from "./InteractiveDeleteIcon.tsx";
+export { InteractiveDeleteIcon } from "./InteractiveDeleteIcon";

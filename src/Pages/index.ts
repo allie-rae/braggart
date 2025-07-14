@@ -1,4 +1,4 @@
-export { BragPage } from "./BragPage.tsx";
-export { FullPageLoader } from "./FullPageLoader.tsx";
-export { Goals } from "./Goals.tsx";
-export { PageNotFound } from "./PageNotFound.tsx";
+export { BragPage } from "./BragPage";
+export { FullPageLoader } from "./FullPageLoader";
+export { Goals } from "./Goals";
+export { PageNotFound } from "./PageNotFound";

@@ -1,2 +1,2 @@
-export { Bar } from "./Bar.tsx";
-export { GraphWrapper } from "./GraphWrapper.tsx";
+export { Bar } from "./Bar";
+export { GraphWrapper } from "./GraphWrapper";

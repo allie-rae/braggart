@@ -1,1 +1,1 @@
-export { BragContext, BragContextProvider } from "./BragContext.tsx";
+export { BragContext, BragContextProvider } from "./BragContext";

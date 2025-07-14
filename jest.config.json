@@ -3,7 +3,8 @@
   "collectCoverage": true,
   "coverageDirectory": "coverage",
   "coveragePathIgnorePatterns": ["/node_modules/"],
-  "moduleFileExtensions": ["js", "jsx", "json"],
-  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"],
-  "testEnvironment": "jsdom"
+  "moduleFileExtensions": ["js", "jsx", "ts", "tsx", "json"],
+  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"],
+  "testEnvironment": "jsdom",
+  "preset": "ts-jest"
 }
