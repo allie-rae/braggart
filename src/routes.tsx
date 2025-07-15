@@ -1,5 +1,5 @@
 import App from "./App";
-import { BragPage, Goals, PageNotFound } from "./Pages/index";
+import { BragPage, Dictionary, Goals, PageNotFound } from "./Pages/index";
 
 export const routes = [
   {
@@ -10,6 +10,7 @@ export const routes = [
       { path: "/", element: <BragPage /> },
       { path: "/goals", element: <Goals /> },
       { path: "/404", element: <PageNotFound /> },
+      { path: "/dictionary", element: <Dictionary /> },
     ],
   },
 ];
