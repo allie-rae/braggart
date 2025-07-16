@@ -34,6 +34,9 @@ export const BragForm = () => {
           value={headline}
           sx={{ minWidth: "275px", maxWidth: "275px", mb: 1 }}
           onChange={(e) => setHeadline(e.target.value)}
+          inputProps={{
+            "data-testid": "headline",
+          }}
         />
       )}
       {step === 2 && (
@@ -45,6 +48,9 @@ export const BragForm = () => {
           multiline
           sx={{ minWidth: "275px", maxWidth: "275px", mb: 1 }}
           onChange={(e) => setAccomplishment(e.target.value)}
+          inputProps={{
+            "data-testid": "brag",
+          }}
         />
       )}
       {step === 3 && (
@@ -59,6 +65,9 @@ export const BragForm = () => {
               const categories = e.target.value.trim().split(/[ ,]+/).filter(Boolean);
               setAccomplishmentCategoriesString(e.target.value);
               setAccomplishmentCategoriesList(categories);
+            }}
+            inputProps={{
+              "data-testid": "categories",
             }}
           />
           <Box sx={{ mr: 1, mb: 1 }}>

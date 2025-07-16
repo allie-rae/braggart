@@ -1,5 +1,5 @@
-import { act, fireEvent, render } from "@testing-library/react";
-
+import { fireEvent, render } from "@testing-library/react";
+import { act } from "react";
 import { InteractiveDeleteIcon } from "./InteractiveDeleteIcon";
 
 jest.useFakeTimers();
