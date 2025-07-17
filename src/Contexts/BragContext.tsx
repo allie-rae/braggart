@@ -13,7 +13,7 @@ type BragContextType = [Brag[], (brags: Brag[]) => void];
 export const BragContext = createContext<BragContextType>([[], () => {}]);
 
 // this will allow potential employers who do not want to interact with the app see the timeline
-const dummyTimelineData = [
+export const dummyTimelineData = [
   {
     headline: "Completed dependency extraction",
     body: `The team decided to use its own implementation instead of depending on an external library. Today, I completed the extraction of the old library.`,
