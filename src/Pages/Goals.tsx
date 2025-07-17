@@ -23,9 +23,7 @@ export const Goals = () => {
         <Typography variant="h6" sx={{ mb: 2 }}>
           Goal Visualization
         </Typography>
-        <Bar title="Number of Accomplishments By Category" />
-        {/* gotta find a use for this line graph */}
-        {/* <Line title="Number of Pages Read" /> */}
+        <Bar title="Number of Accomplishments By Category" brags={brags} />
         {!brags.length && (
           <Box
             sx={{

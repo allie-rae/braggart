@@ -1,5 +1,5 @@
 import { Typography, useTheme } from "@mui/material";
-import { useContext, useMemo } from "react";
+import { useMemo } from "react";
 import {
   Bar as RechartsBar,
   BarChart,
@@ -11,11 +11,15 @@ import {
 } from "recharts";
 
 import { graphMargins, graphTitleStyles } from "../constants";
-import { BragContext } from "../Contexts";
 import { GraphWrapper } from "./index";
+import { Brag } from "../Contexts/BragContext";
 
-export const Bar = ({ title }: { title: string }) => {
-  const [brags] = useContext(BragContext);
+interface BarProps {
+  title: string;
+  brags: Brag[];
+}
+
+export const Bar = ({ title, brags }: BarProps) => {
   const theme = useTheme();
 
   const graphData = useMemo(() => {
