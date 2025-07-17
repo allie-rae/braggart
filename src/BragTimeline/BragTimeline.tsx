@@ -6,10 +6,14 @@ import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
 import { InteractiveEditIcon } from "../InteractiveEditIcon";
 import { formatTimestampDayMonthHourMinute } from "../utils/formatTimestamp";
 import AddIcon from "@mui/icons-material/Add";
-import { BragContext } from "../Contexts";
+import { Brag } from "../Contexts/BragContext";
 
-export const BragTimeline = () => {
-  const [brags, setBrags] = useContext(BragContext);
+interface BragTimelineProps {
+  brags: Brag[];
+  setBrags: (brags: Brag[]) => void;
+}
+
+export const BragTimeline = ({ brags, setBrags }: BragTimelineProps) => {
   const [isUserEditing, setIsUserEditing] = useState<boolean | null | number>(null);
   const [isUserAddingCategory, setIsUserAddingCategory] = useState(false);
   const [categoriesAddedString, setCategoriesAddedString] = useState("");

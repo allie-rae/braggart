@@ -1,16 +1,19 @@
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { Box, Button, Chip, TextField, Typography } from "@mui/material";
-import { useContext, useState } from "react";
-import { BragContext } from "../Contexts";
+import { useState } from "react";
+import { Brag } from "../Contexts/BragContext";
 
+interface BragFormProps {
+  brags: Brag[];
+  setBrags: (brags: Brag[]) => void;
+}
 interface StepNameMap {
   [key: number]: string;
 }
 
 const stepNameMap: StepNameMap = { 1: "Headline", 2: "Brag", 3: "Categorize" };
 
-export const BragForm = () => {
-  const [brags, setBrags] = useContext(BragContext);
+export const BragForm = ({ brags, setBrags }: BragFormProps) => {
   const [headline, setHeadline] = useState("");
   const [accomplishment, setAccomplishment] = useState("");
   const [accomplishmentCategoriesString, setAccomplishmentCategoriesString] = useState("");

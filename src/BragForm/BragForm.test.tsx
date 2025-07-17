@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { BragForm } from "./BragForm";
 
 test("filling out input makes next input appear", async () => {
-  const { getByText, getByRole, getByTestId } = render(<BragForm />);
+  const { getByText, getByRole, getByTestId } = render(<BragForm brags={[]} setBrags={() => []} />);
 
   const input1 = getByTestId("headline");
   const button = getByRole("button");
