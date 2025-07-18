@@ -1,5 +1,5 @@
 import { Box, Chip, Fade, TextField, Typography } from "@mui/material";
-import { ChangeEvent, useContext, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 import { transitionTime } from "../constants";
 import { InteractiveDeleteIcon } from "../InteractiveDeleteIcon";
@@ -7,6 +7,7 @@ import { InteractiveEditIcon } from "../InteractiveEditIcon";
 import { formatTimestampDayMonthHourMinute } from "../utils/formatTimestamp";
 import AddIcon from "@mui/icons-material/Add";
 import { Brag } from "../Contexts/BragContext";
+import { NoBragsFound } from "../NoBragsFound";
 
 interface BragTimelineProps {
   brags: Brag[];
@@ -43,24 +44,7 @@ export const BragTimeline = ({ brags, setBrags }: BragTimelineProps) => {
   };
 
   if (!brags.length) {
-    return (
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "60vh",
-        }}
-      >
-        <Typography variant="h6" sx={{ mb: 1 }}>
-          No brags found!
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 1 }}>
-          Brag your heart out using the form above.
-        </Typography>
-      </Box>
-    );
+    <NoBragsFound />;
   }
 
   return (

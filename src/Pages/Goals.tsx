@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import { Bar } from "../Graphs";
 import { useContext } from "react";
 import { BragContext } from "../Contexts";
-import { Link } from "react-router-dom";
+import { NoBragsFound } from "../NoBragsFound";
 
 export const Goals = () => {
   const [brags] = useContext(BragContext);
@@ -24,24 +24,7 @@ export const Goals = () => {
           Goal Visualization
         </Typography>
         <Bar title="Number of Accomplishments By Category" brags={brags} />
-        {!brags.length && (
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "60vh",
-            }}
-          >
-            <Typography variant="h6" sx={{ mb: 1 }}>
-              Nothing to brag about yet!
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 1 }}>
-              Use <Link to="/">this form</Link> to become a braggart.
-            </Typography>
-          </Box>
-        )}
+        {!brags.length && <NoBragsFound />}
       </Box>
     </Box>
   );
