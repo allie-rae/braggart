@@ -44,7 +44,7 @@ export const BragTimeline = ({ brags, setBrags }: BragTimelineProps) => {
   };
 
   if (!brags.length) {
-    <NoBragsFound />;
+    return <NoBragsFound />;
   }
 
   return (
