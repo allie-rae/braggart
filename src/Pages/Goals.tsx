@@ -23,7 +23,7 @@ export const Goals = () => {
         <Typography variant="h6" sx={{ mb: 2 }}>
           Goal Visualization
         </Typography>
-        <Bar title="Number of Accomplishments By Category" brags={brags} />
+        {brags.length > 0 && <Bar title="Number of Accomplishments By Category" brags={brags} />}
         {!brags.length && <NoBragsFound />}
       </Box>
     </Box>
