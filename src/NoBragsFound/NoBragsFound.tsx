@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
 
 export const NoBragsFound = () => {
   return (
@@ -16,7 +15,7 @@ export const NoBragsFound = () => {
         No brags found!
       </Typography>
       <Typography variant="body1" sx={{ mb: 1 }}>
-        Brag your heart out <Link to="/">here</Link>!
+        Brag your heart out, then check back here!
       </Typography>
     </Box>
   );
