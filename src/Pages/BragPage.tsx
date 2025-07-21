@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
 
 import { BragForm } from "../BragForm";
-import { BragTimeline } from "../BragTimeline";
+import { Brags } from "../Brags";
 import { useContext } from "react";
 import { BragContext } from "../Contexts";
 
@@ -19,7 +19,7 @@ export const BragPage = () => {
         }}
       >
         <BragForm brags={brags} setBrags={setBrags} />
-        <BragTimeline brags={brags} setBrags={setBrags} />
+        <Brags brags={brags} setBrags={setBrags} />
       </Box>
     </Box>
   );

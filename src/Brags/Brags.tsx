@@ -9,12 +9,12 @@ import AddIcon from "@mui/icons-material/Add";
 import { Brag } from "../Contexts/BragContext";
 import { NoBragsFound } from "../NoBragsFound";
 
-interface BragTimelineProps {
+interface BragsProps {
   brags: Brag[];
   setBrags: (brags: Brag[]) => void;
 }
 
-export const BragTimeline = ({ brags, setBrags }: BragTimelineProps) => {
+export const Brags = ({ brags, setBrags }: BragsProps) => {
   const [isUserEditing, setIsUserEditing] = useState<boolean | null | number>(null);
   const [isUserAddingCategory, setIsUserAddingCategory] = useState(false);
   const [categoriesAddedString, setCategoriesAddedString] = useState("");

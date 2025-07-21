@@ -1,21 +1,21 @@
 import { render } from "@testing-library/react";
-import { BragTimeline } from "./BragTimeline";
+import { Brags } from "./Brags";
 import { dummyTimelineData } from "../Contexts/BragContext";
 
 test("empty timeline shows 'No brags found!'", () => {
-  const { getByText } = render(<BragTimeline brags={[]} setBrags={() => []} />);
+  const { getByText } = render(<Brags brags={[]} setBrags={() => []} />);
   expect(getByText("No brags found!")).toBeInTheDocument();
 });
 
 test("full timeline shows headlines", () => {
-  const { getByText } = render(<BragTimeline brags={dummyTimelineData} setBrags={() => []} />);
+  const { getByText } = render(<Brags brags={dummyTimelineData} setBrags={() => []} />);
   expect(getByText("Completed dependency extraction")).toBeInTheDocument();
   expect(getByText("Met with design to clarify objectives")).toBeInTheDocument();
   expect(getByText("Read Clean Code by Robert C Martin")).toBeInTheDocument();
 });
 
 test("full timeline shows body text", () => {
-  const { getByText } = render(<BragTimeline brags={dummyTimelineData} setBrags={() => []} />);
+  const { getByText } = render(<Brags brags={dummyTimelineData} setBrags={() => []} />);
   expect(
     getByText(
       "We exchanged ideas, including potential improvements, what's next priority-wise, who the work could be given to, and next steps."
@@ -35,7 +35,7 @@ test("full timeline shows body text", () => {
 
 test("full timeline shows categories", () => {
   const { getByText, queryAllByText } = render(
-    <BragTimeline brags={dummyTimelineData} setBrags={() => []} />
+    <Brags brags={dummyTimelineData} setBrags={() => []} />
   );
   expect(queryAllByText("Code").length).toBe(2);
   expect(queryAllByText("Teamwork").length).toBe(2);
@@ -45,7 +45,7 @@ test("full timeline shows categories", () => {
 });
 
 test("full timeline shows dates", () => {
-  const { getByText } = render(<BragTimeline brags={dummyTimelineData} setBrags={() => []} />);
+  const { getByText } = render(<Brags brags={dummyTimelineData} setBrags={() => []} />);
   expect(getByText("Tue Jan 17 @ 9:37 AM")).toBeInTheDocument();
   expect(getByText("Wed Jan 18 @ 10:32 AM")).toBeInTheDocument();
   expect(getByText("Thu Jan 19 @ 8:49 PM")).toBeInTheDocument();
