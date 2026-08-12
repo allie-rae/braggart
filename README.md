@@ -15,3 +15,4 @@ I'm adding to this app a little at a time. Progress on the frontend so far:
 - Added categories on brags
 - App now uses localStorage for accomplishments
 - App now has a search feature that searches through headlines, body text, and categories (Jul 13 2025)
+- Deleted react-scripts and installed Vite
