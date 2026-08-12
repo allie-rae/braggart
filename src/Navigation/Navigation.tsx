@@ -1,5 +1,4 @@
-import AutoGraphIcon from "@mui/icons-material/AutoGraph";
-import ViewTimelineIcon from "@mui/icons-material/ViewTimeline";
+import { AutoGraph as AutoGraphIcon, ViewTimeline as ViewTimelineIcon } from "@mui/icons-material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";

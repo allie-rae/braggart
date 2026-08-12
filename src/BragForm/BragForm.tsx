@@ -1,4 +1,4 @@
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import { AddCircleOutline as AddCircleOutlineIcon } from "@mui/icons-material";
 import { Box, Button, Chip, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { Brag } from "../Contexts/BragContext";

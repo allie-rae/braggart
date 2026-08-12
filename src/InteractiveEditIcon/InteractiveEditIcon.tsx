@@ -1,5 +1,4 @@
-import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
-import SaveIcon from "@mui/icons-material/Save";
+import { DriveFileRenameOutline as DriveFileRenameOutlineIcon, Save as SaveIcon } from "@mui/icons-material";
 import { Fade, useTheme } from "@mui/material";
 
 import { transitionTime } from "../constants";

@@ -1,4 +1,4 @@
-import ErrorIcon from "@mui/icons-material/Error";
+import { Error as ErrorIcon } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/system";
 import { Link } from "react-router-dom";
