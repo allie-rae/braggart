@@ -38,8 +38,8 @@ export const dummyTimelineData = [
 ];
 
 export const BragContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const bragTimelineData = localStorage.getItem("bragTimelineData") || "";
-  const [brags, setBrags] = useState<Brag[]>(JSON.parse(bragTimelineData) || []);
+  const bragTimelineData = localStorage.getItem("bragTimelineData");
+  const [brags, setBrags] = useState<Brag[]>(bragTimelineData ? JSON.parse(bragTimelineData) : []);
 
   useEffect(() => {
     const timelineBrags = brags.length ? brags : dummyTimelineData;
